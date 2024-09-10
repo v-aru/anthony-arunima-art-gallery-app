@@ -12,21 +12,30 @@ const Root = styled.div`
   padding: 2rem;
   overflow: hidden;
 `;
+const CaptionWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4); // Adjust opacity value here
+`;
 
 const Caption = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding-top: 1rem;
-  font-size: 2rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: white;
 `;
 
 function ArtPiecesPreview({ artist, title, width, height, image }) {
   return (
     <Root>
       <Image src={image} alt={title} width={width} height={height} />
-      <Caption>
-        <strong>{title}</strong>&nbsp;By&nbsp;<em>{artist}</em>
-      </Caption>
+      <CaptionWrapper>
+        <Caption>
+          <strong>{title}</strong>&nbsp;By&nbsp;<em>{artist}</em>
+        </Caption>
+      </CaptionWrapper>
     </Root>
   );
 }
