@@ -23,7 +23,8 @@ const Piece = styled.div`
 `;
 
 const Artist = styled.div`
-  width: 50px;
+  width: 300px;
+  text-align: center;
   height: 100%;
   padding: 1rem;
   color: black;
