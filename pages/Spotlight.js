@@ -9,9 +9,9 @@ export default function Spotlight({ pieces, isLoading }) {
     router.push("/"); // Navigate back to the homepage
   };
   useEffect(() => {
-    const randomNumber = Math.floor(Math.random() * pieces?.length);
-    const tempArtPiece = pieces?.[randomNumber];
-    setRandomPiece(tempArtPiece);
+    const randomNumber = pieces?.[Math.floor(Math.random() * pieces?.length)];
+
+    setRandomPiece(randomNumber);
   }, [pieces]);
 
   return (
