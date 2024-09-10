@@ -1,12 +1,6 @@
-# New Next Project
+# Art Gallery Project
 
-This project was created from the Spiced Academy `next` template.
-
-You can download the project by running this command in your terminal:
-
-```bash
-npx -y ghcd@latest spiced-academy/fs-web-exercises/tree/main/templates/next my-app -i
-```
+This project was to display some favorite Art Pieces. The application is created using Next.JS
 
 ## Development
 
