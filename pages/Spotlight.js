@@ -5,12 +5,16 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const Root = styled.section`
+    display: flex;
     flex: 1;
     align-items: center;
     padding: 1rem;
     gap: 1rem;
     background: ${(props) =>
     props.colors && `linear-gradient(0.25turn, ${props.colors.join(", ")}) `};
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Piece = styled.div`
@@ -22,28 +26,28 @@ const Artist = styled.div`
   width: 50px;
   height: 100%;
   padding: 1rem;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
+  color: black;
 `;
 
-export default function Spotlight({ image, artist, width, height }) {
-  const router = useRouter();
-  const handleClick = () => {
-    router.push("/"); // Navigate back to the homepage
-  };  
+export default function Spotlight({ pieces }) {
+  // const router = useRouter();
+  // const handleClick = () => {
+  //   router.push("/"); // Navigate back to the homepage
+  // };  
+
+  const randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
   
   return (
-    <Root>
+    <Root colors={randomPiece.colors}>
       <Piece>
         <Image
-          src={image}
+          src={randomPiece.imageSource}
           alt="spotlight piece"
-          width={width}
-          height={height}
+          width={randomPiece.dimensions.width * 0.2}
+          height={randomPiece.dimensions.height * 0.2}
         />
       </Piece>
-      <Artist>{artist}</Artist>
+      <Artist>{randomPiece.artist}</Artist>
     </Root>
   );
 }
