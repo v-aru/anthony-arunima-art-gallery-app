@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import ArtPieces from "@/components/ArtPieces/ArtPieces";
 
 export default function HomePage() {
 
@@ -8,6 +9,7 @@ export default function HomePage() {
   return (
     <div>
       <h1>Art Gallery App</h1>
+      <ArtPieces pieces={data}/>
     </div>
   );
 }
