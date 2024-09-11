@@ -1,26 +1,25 @@
-import useSWR from "swr";
-import ArtPieces from "@/components/ArtPieces/ArtPieces";
 import Spotlight from "./Spotlight";
-// import styled from "styled-components";
+import styled from "styled-components";
 
-export default function HomePage() {
-  const { data, error, isLoading } = useSWR(
-    "https://example-apis.vercel.app/api/art"
-  );
-  const customImageSizeFactor = 0.2;
+
+const Root = styled.main`
+  color: #888;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  color:#888;
+`;
+
+//Renaming HomePage to SpotlightPage
+export default function SpotlightPage({ data }) {
+
+  // const randomPiece = data[Math.floor(Math.random() * data.length)];
+  
   return (
-    <div>
-      <Spotlight
-        pieces={data}
-        isLoading={isLoading}
-        customImageSizeFactor={customImageSizeFactor}
-      />
-      <h1>Art Gallery App</h1>
-      <ArtPieces
-        pieces={data}
-        isLoading={isLoading}
-        customImageSizeFactor={customImageSizeFactor}
-      />
-    </div>
+    <Root>
+      <Title>ART GALLERY - SPOTLIGHT</Title>
+      <Spotlight pieces={data}/>
+    </Root>
   );
 }
