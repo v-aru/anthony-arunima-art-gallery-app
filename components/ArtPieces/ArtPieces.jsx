@@ -13,20 +13,24 @@ const Root = styled.div`
 function ArtPieces({ pieces, setArtPieceInFocusId, artPieceInFocus }) {
   return (
     <Root>
-      {pieces?.map(({ slug, name, artist, dimensions, imageSource }) => {
-        return (
-          <ArtPiecesPreview
-            key={slug}
-            slug={slug}
-            title={name}
-            artist={artist}
-            image={imageSource}
-            width={dimensions.width}
-            height={dimensions.height}
-            setArtPieceInFocusId={setArtPieceInFocusId}
-          />
-        );
-      })}
+      {pieces?.map(
+        ({ slug, name, artist, year, genre, dimensions, imageSource }) => {
+          return (
+            <ArtPiecesPreview
+              key={slug}
+              slug={slug}
+              title={name}
+              artist={artist}
+              year={year}
+              genre={genre}
+              image={imageSource}
+              width={dimensions.width}
+              height={dimensions.height}
+              setArtPieceInFocusId={setArtPieceInFocusId}
+            />
+          );
+        }
+      )}
     </Root>
   );
 }

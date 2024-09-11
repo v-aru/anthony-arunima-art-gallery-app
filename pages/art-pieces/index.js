@@ -12,6 +12,7 @@ const Title = styled.h1`
 `;
 
 function ArtPiecesPage({ data, setArtPieceInFocusId, artPieceInFocus }) {
+  //TODO: discuss if the title should be a component used by ArtPiecesPage, Favorites, Detailed/Single ArtPiece and Spotlight
   return (
     <>
       <Title>ART GALLERY</Title>

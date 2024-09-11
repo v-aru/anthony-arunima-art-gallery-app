@@ -38,6 +38,8 @@ export default function Spotlight({ pieces }) {
 
   const randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
 
+  //TODO: discuss if the return should be refactored to use the ArtPiecesPreview component
+  //it then could use the Link to the actual ArtPiece Page
   return (
     <Root colors={randomPiece.colors}>
       <Piece>
