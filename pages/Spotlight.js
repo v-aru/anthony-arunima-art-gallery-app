@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
+
 const Root = styled.section`
     display: flex;
     flex: 1;
