@@ -4,18 +4,17 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
-
 const Root = styled.section`
-    display: flex;
-    flex: 1;
-    align-items: center;
-    padding: 1rem;
-    gap: 1rem;
-    background: ${(props) =>
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  background: ${(props) =>
     props.colors && `linear-gradient(0.25turn, ${props.colors.join(", ")}) `};
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Piece = styled.div`
@@ -35,10 +34,10 @@ export default function Spotlight({ pieces }) {
   // const router = useRouter();
   // const handleClick = () => {
   //   router.push("/"); // Navigate back to the homepage
-  // };  
+  // };
 
   const randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
-  
+
   return (
     <Root colors={randomPiece.colors}>
       <Piece>
@@ -53,5 +52,3 @@ export default function Spotlight({ pieces }) {
     </Root>
   );
 }
-//
-//
