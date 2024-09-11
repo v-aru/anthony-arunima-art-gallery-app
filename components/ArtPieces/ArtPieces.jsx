@@ -10,18 +10,20 @@ const Root = styled.div`
   align-items: center;
   gap: 1rem;
 `;
-function ArtPieces({ pieces }) {
+function ArtPieces({ pieces, setArtPieceInFocusId, artPieceInFocus }) {
   return (
     <Root>
       {pieces?.map(({ slug, name, artist, dimensions, imageSource }) => {
         return (
           <ArtPiecesPreview
             key={slug}
+            slug={slug}
             title={name}
             artist={artist}
             image={imageSource}
             width={dimensions.width}
             height={dimensions.height}
+            setArtPieceInFocusId={setArtPieceInFocusId}
           />
         );
       })}

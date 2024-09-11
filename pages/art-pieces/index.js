@@ -2,17 +2,26 @@ import ArtPieces from "@/components/ArtPieces/ArtPieces";
 import styled from "styled-components";
 
 const Title = styled.h1`
+  z-index: 10;
+  position: sticky;
+  top: 0;
   text-align: center;
-  color:#888;
+  padding: 2rem;
+  color: #888;
+  background-color: #33343380;
 `;
 
-function ArtPiecesPage ({data}) {
-    return (
-        <>
-            <Title>ART GALLERY</Title>
-            <ArtPieces pieces={data}/>
-        </>
-    );
-};
+function ArtPiecesPage({ data, setArtPieceInFocusId, artPieceInFocus }) {
+  return (
+    <>
+      <Title>ART GALLERY</Title>
+      <ArtPieces
+        pieces={data}
+        setArtPieceInFocusId={setArtPieceInFocusId}
+        artPieceInFocus={artPieceInFocus}
+      />
+    </>
+  );
+}
 
 export default ArtPiecesPage;
