@@ -3,6 +3,7 @@ import useSWR, { SWRConfig } from "swr";
 import Layout from "@/components/Layout/Layout";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import Favourites from "@/components/Favourites/Favourites";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -32,6 +33,26 @@ export default function App({ Component, pageProps }) {
     }
   }, [data, artPieceInFocusId, isLoading, error]);
 
+  const [artPieceInfo, setArtPieceInfo] = useState([]);
+  
+  function handleToggleFavourite(slug) {
+    setArtPieceInfo((artPieceInfo) => {
+      const foundPieceInfo = artPieceInfo.find((piece) => piece.slug === slug);
+
+      if (foundPieceInfo) {
+        return artPieceInfo.map((foundArtInfo) => foundArtInfo.slug === slug ? {
+          ...foundArtInfo,
+          isFavourite: !foundArtInfo.isFavourite,
+        } : foundArtInfo
+      );
+      }
+      return [...artPieceInfo, { slug, isFavourite: true}];
+
+    });
+  }
+    
+    
+  
   if (error) {
     return <div>An error occurred. Please try again!</div>;
   }
@@ -49,6 +70,8 @@ export default function App({ Component, pageProps }) {
             data={data}
             artPieceInFocus={artPieceInFocus}
             setArtPieceInFocusId={setArtPieceInFocusId}
+            artPieceInfo={artPieceInfo}
+            onToggleFavourite={handleToggleFavourite}
           />
         </Layout>
       </SWRConfig>

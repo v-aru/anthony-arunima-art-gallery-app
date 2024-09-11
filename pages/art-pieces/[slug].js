@@ -1,7 +1,7 @@
 import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
 import { useRouter } from "next/router";
 
-export default function ArtPiecePage({ artPieceInFocus }) {
+export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFavourite }) {
   const router = useRouter();
   const { slug, name, artist, dimensions, imageSource } = artPieceInFocus;
 
@@ -24,6 +24,8 @@ export default function ArtPiecePage({ artPieceInFocus }) {
         width={dimensions.width}
         height={dimensions.height}
         isInFocus={true}
+        artPieceInfo={artPieceInfo}
+        onToggleFavourite={onToggleFavourite}
       />
     </div>
   );
