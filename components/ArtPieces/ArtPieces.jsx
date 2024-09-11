@@ -13,22 +13,26 @@ const Root = styled.div`
 function ArtPieces({ pieces, setArtPieceInFocusId, artPieceInFocus, artPieceInfo, onToggleFavourite }) {
   return (
     <Root>
-      {pieces?.map(({ slug, name, artist, dimensions, imageSource }) => {
-        return (
-          <ArtPiecesPreview
-            key={slug}
-            slug={slug}
-            title={name}
-            artist={artist}
-            image={imageSource}
-            width={dimensions.width}
-            height={dimensions.height}
-            setArtPieceInFocusId={setArtPieceInFocusId}
-            artPieceInfo={artPieceInfo}
-            onToggleFavourite={onToggleFavourite}
-          />
-        );
-      })}
+      {pieces?.map(
+        ({ slug, name, artist, year, genre, dimensions, imageSource, setArtPieceInFocusId, artPieceInfo, onToggleFavourite }) => {
+          return (
+            <ArtPiecesPreview
+              key={slug}
+              slug={slug}
+              title={name}
+              artist={artist}
+              year={year}
+              genre={genre}
+              image={imageSource}
+              width={dimensions.width}
+              height={dimensions.height}
+              setArtPieceInFocusId={setArtPieceInFocusId}
+              artPieceInfo={artPieceInfo}
+              onToggleFavourite={onToggleFavourite}
+            />
+          );
+        }
+      )}
     </Root>
   );
 }

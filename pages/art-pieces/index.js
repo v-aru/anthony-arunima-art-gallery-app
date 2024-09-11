@@ -11,7 +11,10 @@ const Title = styled.h1`
   background-color: #33343380;
 `;
 
+ //TODO: discuss if the title should be a component used by ArtPiecesPage, Favorites, Detailed/Single ArtPiece and Spotlight
+
 function ArtPiecesPage({ data, setArtPieceInFocusId, artPieceInFocus, artPieceInfo, onToggleFavourite }) {
+
   return (
     <>
       <Title>ART GALLERY</Title>
