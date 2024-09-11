@@ -16,20 +16,19 @@ const LoadingWrapper = styled.div`
 const URL = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
-
   const { data, error, isLoading } = useSWR(URL, fetcher);
-  if(error) {
-    return <div>An error occurred. Please try again!</div>
+  if (error) {
+    return <div>An error occurred. Please try again!</div>;
   }
   if (isLoading) {
-    return <LoadingWrapper>Loading...</LoadingWrapper>
+    return <LoadingWrapper>Loading...</LoadingWrapper>;
   }
   return (
     <>
       <GlobalStyle />
       <SWRConfig value={{ fetcher }}>
         <Layout>
-        <Component {...pageProps} data={data}/>
+          <Component {...pageProps} data={data} />
         </Layout>
       </SWRConfig>
     </>
