@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { useWindowSize } from "@uidotdev/usehooks";
 import Link from "next/link";
+import Favourites from "../Favourites/Favourites";
 
 const Root = styled.div`
   position: relative;
@@ -12,6 +13,13 @@ const Root = styled.div`
   border: 2px solid white;
   padding: 2rem;
   overflow: hidden;
+`;
+
+const ButtonWrapper = styled.div`
+  position: absolute;
+  top: 10px; /* Top-right corner */
+  right: 10px;
+  z-index: 10; /* Ensure the button stays on top of the image */
 `;
 
 //TODO: discuss to introduce image style "onHover" so that the Link/Icon gets more visible
@@ -84,6 +92,8 @@ function ArtPiecesPreview({
   image,
   setArtPieceInFocusId,
   isInFocus = false,
+  artPieceInfo,
+  onToggleFavourite
 }) {
   const viewWidth = useWindowSize().width * 0.4;
   const aspectRatio = width / height;
@@ -92,6 +102,13 @@ function ArtPiecesPreview({
   return (
     <Root>
       {/* <ImageWrapper> */}
+      <ButtonWrapper>
+        <Favourites
+        slug={slug}
+        artPieceInfo={artPieceInfo}
+        onToggleFavourite={onToggleFavourite}
+      />
+      </ButtonWrapper>
       <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
       {/* </ImageWrapper> */}
 

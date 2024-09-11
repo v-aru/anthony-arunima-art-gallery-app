@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
 
-export default function ArtPiecePage({ artPieceInFocus }) {
-  const [string] = useState("BrushedBytes");
+export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFavourite }) {
+
   const router = useRouter();
   const { slug, name, artist, year, genre, dimensions, imageSource } =
     artPieceInFocus;
@@ -46,6 +46,8 @@ export default function ArtPiecePage({ artPieceInFocus }) {
         width={dimensions.width}
         height={dimensions.height}
         isInFocus={true}
+        artPieceInfo={artPieceInfo}
+        onToggleFavourite={onToggleFavourite}
       />
     </Root>
   );
