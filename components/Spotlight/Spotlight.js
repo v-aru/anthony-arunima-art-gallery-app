@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import Favourites from "../Favourites/Favourites";
 
 const Root = styled.section`
   display: flex;
@@ -20,6 +21,7 @@ const Root = styled.section`
 const Piece = styled.div`
   flex: 1;
   padding: 1rem;
+  position: relative;
 `;
 
 const Artist = styled.div`
@@ -30,25 +32,30 @@ const Artist = styled.div`
   color: black;
 `;
 
-export default function Spotlight({ pieces }) {
+export default function Spotlight({ image, artist, colors, width, height, slug, artPieceInfo, onToggleFavourite}) {
   // const router = useRouter();
   // const handleClick = () => {
   //   router.push("/"); // Navigate back to the homepage
   // };
 
-  const randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
+  // const randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
 
   return (
-    <Root colors={randomPiece.colors}>
+    <Root colors={colors}>
       <Piece>
+        <Favourites
+          slug={slug}
+          artPieceInfo={artPieceInfo}
+          onToggleFavourite={onToggleFavourite}
+        />
         <Image
-          src={randomPiece.imageSource}
+          src={image}
           alt="spotlight piece"
-          width={randomPiece.dimensions.width * 0.2}
-          height={randomPiece.dimensions.height * 0.2}
+          width={width * 0.2}
+          height={height * 0.2}
         />
       </Piece>
-      <Artist>{randomPiece.artist}</Artist>
+      <Artist>{artist}</Artist>
     </Root>
   );
 }
