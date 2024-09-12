@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import ArtPiecesPreview from "../ArtPiecesPreview/ArtPiecesPreview.jsx";
+import ScrollPositionIndicator from "../ScrollIndicator/ScrollPositionIndicator.js";
 
 const Root = styled.div`
   width: 100%;
@@ -43,6 +44,8 @@ function ArtPieces({
   }, [artPieceInFocus]);
   return (
     <Root ref={artPiecesRef}>
+      {" "}
+      <ScrollPositionIndicator artPiecesRef={artPiecesRef} />
       {pieces?.map(
         ({ slug, name, artist, year, genre, dimensions, imageSource }) => {
           return (

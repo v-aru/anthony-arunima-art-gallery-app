@@ -1,5 +1,6 @@
 import ArtPieces from "@/components/ArtPieces/ArtPieces";
 import Carousell from "@/components/Carousell/Carousell";
+import ScrollPositionIndicator from "@/components/ScrollIndicator/ScrollPositionIndicator";
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -26,6 +27,7 @@ function ArtPiecesPage({
     <>
       <Title>ART GALLERY</Title>
       <Carousell pieces={data} onSetArtPieceInFocus={onSetArtPieceInFocus} />
+
       <ArtPieces
         pieces={data}
         artPieceInFocus={artPieceInFocus}
