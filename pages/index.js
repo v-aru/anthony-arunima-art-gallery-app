@@ -1,13 +1,9 @@
 import styled from "styled-components";
 import Spotlight from "../components/Spotlight/Spotlight";
 import { useEffect, useState } from "react";
+import Title from "@/components/Title/Title";
 
 const Root = styled.main`
-  color: #888;
-`;
-
-const Title = styled.h1`
-  text-align: center;
   color: #888;
 `;
 
@@ -33,7 +29,9 @@ export default function SpotlightPage({
 
   return (
     <Root>
-      <Title>ART GALLERY - SPOTLIGHT</Title>
+
+      <Title content={"ART GALLERY - SPOTLIGHT"} />
+
       <Spotlight
         image={randomPiece.imageSource}
         colors={randomPiece.colors}
