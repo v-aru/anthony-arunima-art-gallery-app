@@ -59,7 +59,6 @@ const FlowingText = styled.p`
 const LinkWrapper = styled.div`
   z-index: 10;
   width: 100%;
-  ${"" /* height: fit-content; */}
   height: 100%;
   position: absolute;
   top: 50%;
@@ -98,7 +97,6 @@ const Circle = styled.span`
   border-radius: 50%;
 `;
 function ArtPiecesPreview({
-  dataSlug,
   slug,
   artist,
   title,

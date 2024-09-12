@@ -1,6 +1,5 @@
 import ArtPieces from "@/components/ArtPieces/ArtPieces";
 import Carousell from "@/components/Carousell/Carousell";
-import ScrollPositionIndicator from "@/components/ScrollIndicator/ScrollPositionIndicator";
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -17,7 +16,6 @@ const Title = styled.h1`
 
 function ArtPiecesPage({
   data,
-  setArtPieceInFocusId,
   artPieceInFocus,
   artPieceInfo,
   onToggleFavourite,

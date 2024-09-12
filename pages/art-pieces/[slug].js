@@ -1,6 +1,5 @@
 import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import styled from "styled-components";
 
 export default function ArtPiecePage({
