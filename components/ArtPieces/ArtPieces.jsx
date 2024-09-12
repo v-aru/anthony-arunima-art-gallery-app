@@ -57,6 +57,7 @@ function ArtPieces({
           colors,
           imageSource,
         }) => {
+
           return (
             <>
               <ArtPiecesPreview
@@ -69,7 +70,6 @@ function ArtPieces({
                 genre={genre}
                 width={dimensions.width}
                 height={dimensions.height}
-                colors={colors}
                 image={imageSource}
                 artPieceInFocus={artPieceInFocus}
                 artPieceInfo={artPieceInfo}
