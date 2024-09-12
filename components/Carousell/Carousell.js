@@ -1,5 +1,6 @@
+import { useWindowSize } from "@uidotdev/usehooks";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function Carousell({ pieces, onSetArtPieceInFocus }) {
   const containerRef = useRef(null);
