@@ -4,7 +4,6 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import Link from "next/link";
 import Favourites from "../Favourites/Favourites";
 
-
 import {
   Root,
   ButtonWrapper,
@@ -14,8 +13,8 @@ import {
   FlowingText,
   LinkWrapper,
 } from "./artPiecesPreviewStyles";
-
 function ArtPiecesPreview({
+  dataSlug,
   slug,
   artist,
   title,
