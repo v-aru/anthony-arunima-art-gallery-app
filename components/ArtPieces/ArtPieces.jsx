@@ -30,8 +30,8 @@ function ArtPieces({
       if (pieceElement) {
         pieceElement.scrollIntoView({
           behavior: "smooth",
-          block: "nearest", // Adjust as needed
-          inline: "nearest", // Adjust as needed
+          block: "nearest",
+          inline: "nearest",
         });
       }
     }
@@ -44,7 +44,6 @@ function ArtPieces({
   }, [artPieceInFocus]);
   return (
     <Root ref={artPiecesRef}>
-      {" "}
       <ScrollPositionIndicator artPiecesRef={artPiecesRef} />
       {pieces?.map(
         ({
@@ -57,11 +56,9 @@ function ArtPieces({
           colors,
           imageSource,
         }) => {
-          console.log(colors);
           return (
             <>
               <ArtPiecesPreview
-                dataSlug={slug}
                 key={slug}
                 slug={slug}
                 artist={artist}
