@@ -81,6 +81,22 @@ const LinkWrapper = styled.div`
     overflow-wrap: break-word;
   }
 `;
+
+const ColorCirclesWrapper = styled.span`
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1;
+`;
+const Circle = styled.span`
+  height: 25px;
+  width: 25px;
+  background: ${(props) => {
+    console.log(props);
+    return props.color;
+  }};
+
+  border-radius: 50%;
+`;
 function ArtPiecesPreview({
   dataSlug,
   slug,
@@ -90,6 +106,7 @@ function ArtPiecesPreview({
   genre,
   width,
   height,
+  colors,
   image,
   isInFocus = false,
   artPieceInfo,
@@ -102,7 +119,6 @@ function ArtPiecesPreview({
 
   return (
     <Root data-slug={slug}>
-      {/* <ImageWrapper> */}
       <ButtonWrapper>
         <Favourites
           slug={slug}
@@ -110,9 +126,7 @@ function ArtPiecesPreview({
           onToggleFavourite={onToggleFavourite}
         />
       </ButtonWrapper>
-      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
-      {/* </ImageWrapper> */}
-
+      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />{" "}
       {!isInFocus ? (
         <>
           <Caption>
@@ -137,6 +151,12 @@ function ArtPiecesPreview({
           </Caption>
           <FlowingText>{year}</FlowingText>
           <FlowingText>{genre}</FlowingText>
+
+          <ColorCirclesWrapper>
+            {colors?.map((color, i) => {
+              return <Circle key={i} color={color}></Circle>;
+            })}
+          </ColorCirclesWrapper>
         </ImageInfo>
       )}
     </Root>
