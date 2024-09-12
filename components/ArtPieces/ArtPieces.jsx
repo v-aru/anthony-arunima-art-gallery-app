@@ -47,17 +47,7 @@ function ArtPieces({
       {" "}
       <ScrollPositionIndicator artPiecesRef={artPiecesRef} />
       {pieces?.map(
-        ({
-          slug,
-          name,
-          artist,
-          year,
-          genre,
-          dimensions,
-          colors,
-          imageSource,
-        }) => {
-          console.log(colors);
+        ({ slug, name, artist, year, genre, dimensions, imageSource }) => {
           return (
             <>
               <ArtPiecesPreview
@@ -70,7 +60,6 @@ function ArtPieces({
                 genre={genre}
                 width={dimensions.width}
                 height={dimensions.height}
-                colors={colors}
                 image={imageSource}
                 artPieceInFocus={artPieceInFocus}
                 artPieceInfo={artPieceInfo}
