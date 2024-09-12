@@ -42,6 +42,7 @@ export default function FavouritesPage({ artPieceInfo = [], onToggleFavourite })
                 return (
 
                 <ArtPiecesPreview
+                    key={slug}
                     slug={piece.slug}
                     artist={piece.artist}
                     title={piece.title}
