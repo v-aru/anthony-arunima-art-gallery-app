@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useWindowSize } from "@uidotdev/usehooks";
 import Link from "next/link";
 import Favourites from "../Favourites/Favourites";
-
 import {
   Root,
   ButtonWrapper,
@@ -22,7 +21,6 @@ function ArtPiecesPreview({
   genre,
   width,
   height,
-  colors,
   image,
   isInFocus = false,
   artPieceInfo,
@@ -35,6 +33,7 @@ function ArtPiecesPreview({
 
   return (
     <Root data-slug={slug}>
+      {/* <ImageWrapper> */}
       <ButtonWrapper>
         <Favourites
           slug={slug}
@@ -42,7 +41,9 @@ function ArtPiecesPreview({
           onToggleFavourite={onToggleFavourite}
         />
       </ButtonWrapper>
-      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />{" "}
+      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
+      {/* </ImageWrapper> */}
+
       {!isInFocus ? (
         <>
           <Caption>
@@ -67,12 +68,6 @@ function ArtPiecesPreview({
           </Caption>
           <FlowingText>{year}</FlowingText>
           <FlowingText>{genre}</FlowingText>
-
-          <ColorCirclesWrapper>
-            {colors?.map((color, i) => {
-              return <Circle key={i} color={color}></Circle>;
-            })}
-          </ColorCirclesWrapper>
         </ImageInfo>
       )}
     </Root>
