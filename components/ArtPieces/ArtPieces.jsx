@@ -57,7 +57,6 @@ function ArtPieces({
           colors,
           imageSource,
         }) => {
-          console.log(colors);
           return (
             <>
               <ArtPiecesPreview
