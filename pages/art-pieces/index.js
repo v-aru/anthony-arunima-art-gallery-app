@@ -1,4 +1,5 @@
 import ArtPieces from "@/components/ArtPieces/ArtPieces";
+import Carousell from "@/components/Carousell/Carousell";
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -11,19 +12,26 @@ const Title = styled.h1`
   background-color: #33343380;
 `;
 
- //TODO: discuss if the title should be a component used by ArtPiecesPage, Favorites, Detailed/Single ArtPiece and Spotlight
+//TODO: discuss if the title should be a component used by ArtPiecesPage, Favorites, Detailed/Single ArtPiece and Spotlight
 
-function ArtPiecesPage({ data, setArtPieceInFocusId, artPieceInFocus, artPieceInfo, onToggleFavourite }) {
-
+function ArtPiecesPage({
+  data,
+  setArtPieceInFocusId,
+  artPieceInFocus,
+  artPieceInfo,
+  onToggleFavourite,
+  onSetArtPieceInFocus,
+}) {
   return (
     <>
       <Title>ART GALLERY</Title>
+      <Carousell pieces={data} onSetArtPieceInFocus={onSetArtPieceInFocus} />
       <ArtPieces
         pieces={data}
-        setArtPieceInFocusId={setArtPieceInFocusId}
         artPieceInFocus={artPieceInFocus}
         artPieceInfo={artPieceInfo}
         onToggleFavourite={onToggleFavourite}
+        onSetArtPieceInFocus={onSetArtPieceInFocus}
       />
     </>
   );

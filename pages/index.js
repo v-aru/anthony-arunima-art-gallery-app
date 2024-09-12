@@ -12,7 +12,11 @@ const Title = styled.h1`
 `;
 
 //Renaming HomePage to SpotlightPage
-export default function SpotlightPage({ data, artPieceInfo, onToggleFavourite }) {
+export default function SpotlightPage({
+  data,
+  artPieceInfo,
+  onToggleFavourite,
+}) {
   const [randomPiece, setRandomPiece] = useState(null);
 
   useEffect(() => {
@@ -23,22 +27,21 @@ export default function SpotlightPage({ data, artPieceInfo, onToggleFavourite })
       const selectedPiece = data[randomNumber];
       setRandomPiece(selectedPiece);
     }
-  }, [data]); 
+  }, [data]);
 
   if (!randomPiece) return <div>Loading...</div>;
 
   return (
     <Root>
       <Title>ART GALLERY - SPOTLIGHT</Title>
-      <Spotlight 
+      <Spotlight
         image={randomPiece.imageSource}
         colors={randomPiece.colors}
         artist={randomPiece.artist}
         width={randomPiece.dimensions.width}
-        height={randomPiece.dimensions.height} 
+        height={randomPiece.dimensions.height}
         artPieceInfo={artPieceInfo}
         onToggleFavourite={onToggleFavourite}
-        
       />
     </Root>
   );
