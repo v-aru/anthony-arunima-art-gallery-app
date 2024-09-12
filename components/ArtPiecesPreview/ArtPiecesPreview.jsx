@@ -82,6 +82,7 @@ const LinkWrapper = styled.div`
   }
 `;
 function ArtPiecesPreview({
+  dataSlug,
   slug,
   artist,
   title,
@@ -90,24 +91,24 @@ function ArtPiecesPreview({
   width,
   height,
   image,
-  setArtPieceInFocusId,
   isInFocus = false,
   artPieceInfo,
-  onToggleFavourite
+  onToggleFavourite,
+  onSetArtPieceInFocus,
 }) {
   const viewWidth = useWindowSize().width * 0.4;
   const aspectRatio = width / height;
   const actualHeight = viewWidth / aspectRatio;
 
   return (
-    <Root>
+    <Root data-slug={slug}>
       {/* <ImageWrapper> */}
       <ButtonWrapper>
         <Favourites
-        slug={slug}
-        artPieceInfo={artPieceInfo}
-        onToggleFavourite={onToggleFavourite}
-      />
+          slug={slug}
+          artPieceInfo={artPieceInfo}
+          onToggleFavourite={onToggleFavourite}
+        />
       </ButtonWrapper>
       <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
       {/* </ImageWrapper> */}
@@ -120,7 +121,7 @@ function ArtPiecesPreview({
           <LinkWrapper>
             <Link
               href={`/art-pieces/${slug}`}
-              onClick={() => setArtPieceInFocusId(slug)}
+              onClick={() => onSetArtPieceInFocus(slug)}
             >
               {title}
             </Link>

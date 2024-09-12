@@ -29,6 +29,7 @@ export default function SpotlightPage({
 
   return (
     <Root>
+
       <Title content={"ART GALLERY - SPOTLIGHT"} />
 
       <Spotlight
