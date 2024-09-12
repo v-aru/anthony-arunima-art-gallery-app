@@ -10,26 +10,35 @@ const Root = styled.div`
   align-items: center;
   gap: 1rem;
 `;
-function ArtPieces({ pieces, setArtPieceInFocusId, artPieceInFocus, artPieceInfo, onToggleFavourite }) {
+function ArtPieces({
+  pieces,
+  setArtPieceInFocusId,
+  artPieceInFocus,
+  artPieceInfo,
+  onToggleFavourite,
+}) {
   return (
     <Root>
       {pieces?.map(
-        ({ slug, name, artist, year, genre, dimensions, imageSource, setArtPieceInFocusId, artPieceInfo, onToggleFavourite }) => {
+        ({ slug, name, artist, year, genre, dimensions, imageSource }) => {
           return (
-            <ArtPiecesPreview
-              key={slug}
-              slug={slug}
-              title={name}
-              artist={artist}
-              year={year}
-              genre={genre}
-              image={imageSource}
-              width={dimensions.width}
-              height={dimensions.height}
-              setArtPieceInFocusId={setArtPieceInFocusId}
-              artPieceInfo={artPieceInfo}
-              onToggleFavourite={onToggleFavourite}
-            />
+            <>
+              <ArtPiecesPreview
+                key={slug}
+                slug={slug}
+                artist={artist}
+                title={name}
+                year={year}
+                genre={genre}
+                width={dimensions.width}
+                height={dimensions.height}
+                image={imageSource}
+                artPieceInFocus={artPieceInFocus}
+                setArtPieceInFocusId={setArtPieceInFocusId}
+                artPieceInfo={artPieceInfo}
+                onToggleFavourite={onToggleFavourite}
+              />
+            </>
           );
         }
       )}
