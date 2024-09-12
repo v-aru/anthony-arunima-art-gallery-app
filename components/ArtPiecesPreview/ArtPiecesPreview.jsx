@@ -82,6 +82,7 @@ const LinkWrapper = styled.div`
   }
 `;
 function ArtPiecesPreview({
+  dataSlug,
   slug,
   artist,
   title,
@@ -100,7 +101,7 @@ function ArtPiecesPreview({
   const actualHeight = viewWidth / aspectRatio;
 
   return (
-    <Root>
+    <Root data-slug={slug}>
       {/* <ImageWrapper> */}
       <ButtonWrapper>
         <Favourites

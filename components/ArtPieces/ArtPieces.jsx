@@ -4,12 +4,13 @@ import ArtPiecesPreview from "../ArtPiecesPreview/ArtPiecesPreview.jsx";
 
 const Root = styled.div`
   width: 100%;
-  height: 100%;
+  height: 70%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  overflow: scroll;
 `;
 function ArtPieces({
   pieces,
@@ -21,8 +22,6 @@ function ArtPieces({
   const artPiecesRef = useRef(null);
 
   const scrollToPiece = (piece) => {
-    console.log("triggered scrollToPiece");
-
     if (artPiecesRef.current) {
       const pieceElement = artPiecesRef.current.querySelector(
         `[data-slug="${piece.slug}"]`
@@ -38,7 +37,6 @@ function ArtPieces({
   };
 
   useEffect(() => {
-    console.log("triggered useEffect");
     if (artPieceInFocus) {
       scrollToPiece(artPieceInFocus);
     }
@@ -50,7 +48,7 @@ function ArtPieces({
           return (
             <>
               <ArtPiecesPreview
-                data-slug={slug}
+                dataSlug={slug}
                 key={slug}
                 slug={slug}
                 artist={artist}
