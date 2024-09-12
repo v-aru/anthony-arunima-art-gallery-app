@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Root = styled.div`
   position: relative;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   border: 2px solid white;
@@ -13,9 +13,16 @@ export const Root = styled.div`
 
 export const ButtonWrapper = styled.div`
   position: absolute;
-  top: 10px; /* Top-right corner */
+  top: 10px; 
   right: 10px;
-  z-index: 10; /* Ensure the button stays on top of the image */
+  z-index: 15; 
+  width: 40px;
+  height: 40px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
 `;
 
 //TODO: discuss to introduce image style "onHover" so that the Link/Icon gets more visible
@@ -26,7 +33,6 @@ export const ButtonWrapper = styled.div`
 //   }
 // `;
 export const Caption = styled.div`
-  display: flex;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -42,10 +48,10 @@ export const ImageInfo = styled.div`
   align-items: center;
   padding: 1rem;
   color: #ccc;
-  background-color: #33343380; /* Overall container styling */
-  border: 1px solid #ccc; /* Subtle border */
+  background-color: #33343380; 
+  border: 1px solid #ccc;
   padding: 15px;
-  margin-top: 10px; /* Space above the box */
+  margin-top: 10px; 
   font-family: sans-serif;
 `;
 export const FlowingText = styled.p`

@@ -1,8 +1,9 @@
 import NextLink from "next/link";
 import styled from 'styled-components';
+import { useRouter } from "next/router";
 
 const Root = styled.div`
-    height: 80px;
+    height: 60px;
     display: flex;
     background: lightgray
     align-items: center;
@@ -10,7 +11,7 @@ const Root = styled.div`
 `;
 
 const Link = styled(NextLink)`
-    font-wwight: 2rem;
+    font-weight: 1.5rem;
     text-decoration: none;
     color: inherit;
     padding: 10px;
@@ -20,18 +21,23 @@ const Link = styled(NextLink)`
     width: 100%;
 
     &:hover {
-        background-color: #333;
-        color: white;
+        background-color: ${(props) => (props.isActive ? '#333' : 'lightgray')};
+        color: ${(props) => (props.isActive ? 'white' : '#333')};
     }
+
+    background-color: ${(props) => (props.isActive ? '#333' : 'lightgray')};
+    color: ${(props) => (props.isActive ? 'white' : 'inherit')};
 `;
 
 
 export default function Navigation () {
+    const router = useRouter();
+    const isActive = (pathname) => router.pathname === pathname;
     return (
         <Root>
-            <Link href="/">Spotlight</Link>
-            <Link href="/art-pieces">Art Pieces</Link>
-            <Link href="/favourites">Favourites</Link>
+            <Link href="/" isActive={isActive('/')}>Spotlight</Link>
+            <Link href="/art-pieces" isActive={isActive('/art-pieces')}>Art Pieces</Link>
+            <Link href="/favourites" isActive={isActive('/favourites')}>Favourites</Link>
         </Root>
     );
 }
