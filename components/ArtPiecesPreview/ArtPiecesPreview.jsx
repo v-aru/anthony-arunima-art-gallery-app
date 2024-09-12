@@ -11,7 +11,7 @@ import {
   LinkWrapper,
   ColorCirclesWrapper,
   Circle,
-} from "./srtPiecesPreviewStyles";
+} from "./artPiecesPreviewStyles";
 
 function ArtPiecesPreview({
   dataSlug,
