@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Roboto-Thin"; /* Match the name used in your styled-component */
+  src: url("./public/fonts/Roboto-Thin.ttf") format("truetype"); /* Path to your font file */
+  font-weight: 100; /* Adjust if needed based on the font's actual weight */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Thin-Italic"; /* Match the name used in your styled-component */
+  src: url("./public/fonts/Roboto-ThinItalic.ttf") format("truetype"); /* Path to your font file */
+  font-weight: 100; /* Adjust if needed based on the font's actual weight */
+  font-style: normal;
+}

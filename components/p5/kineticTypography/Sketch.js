@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRef, useEffect } from "react";
 import * as p5 from "p5";
 
-import fontFile from "../../../public/fonts/Roboto-Thin.ttf";
+import fontFile from "../../../public/fonts/Roboto-ThinItalic.ttf";
 
 export default function Sketch({
   width,
@@ -35,9 +35,9 @@ export default function Sketch({
 
     p.draw = () => {
       p.clear();
-      p.background(255);
-      pg.background(255);
-      pg.fill(0);
+      p.background(backgroundColor);
+      pg.background(backgroundColor);
+      pg.fill(mainObjColor);
       pg.textFont(font);
       pg.textSize(60);
       pg.push();
