@@ -30,17 +30,18 @@ export const ItemContainer = styled.div`
   width: 300px; 
   height: 400px;
   margin: 1rem; 
+  padding: 1rem;
   border: 1px solid #ddd; 
   border-radius: 8px; 
-  overflow: hidden; /* Ensure children don't overflow the container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a card-like appearance */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   position: sticky;
 `;
 
 export const FixedImage = styled.img`
-  width: 200px; /* Set a fixed width */
-  height: 280px; /* Set a fixed height */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  width: 200px; 
+  height: 280px; 
+  object-fit: cover; 
 `;
 
 export const ArtInfo = styled.div`

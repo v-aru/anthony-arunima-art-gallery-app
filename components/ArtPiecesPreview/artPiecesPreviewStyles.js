@@ -7,7 +7,7 @@ export const Root = styled.div`
   justify-content: center;
   align-items: center;
   border: 2px solid white;
-  padding: 2rem;
+  padding: 1rem;
   overflow: hidden;
   background: ${(props) => (props.isInFocus ? "black" : "white")};
 `;
@@ -31,12 +31,13 @@ export const Caption = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
   color: #6689A1;
 `;
 export const ImageInfo = styled.div`
   width: 100%;
   display: flex;
+  position: relative;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
@@ -88,4 +89,40 @@ export const Circle = styled.span`
   background: ${(props) => props.color};
 
   border-radius: 50%;
+`;
+
+export const CardContainer = styled.div`
+  width: 300px;
+  height: 400px;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  overflow: hidden; 
+  position: relative; 
+  img {
+    object-fit: cover; 
+  }
 `;
