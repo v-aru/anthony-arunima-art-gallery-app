@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import dynamic from "next/dynamic";
+import useResizeObserver from "../../../hooks/useResizeObserver";
 const Sketch = dynamic(() => import("./Sketch"), {
   ssr: false,
 });
@@ -21,7 +22,16 @@ export default function SketchWrapper({ containerRef, textToWrite }) {
       height: containerRef?.current?.offsetHeight,
     });
   }, [containerRef]);
-
+  const [isUserActive, setIsUserActive] = useState(false);
+  const handleUserActivity = useCallback(() => {
+    setIsUserActive(true);
+  }, []);
+  useResizeObserver(
+    containerRef,
+    setDimensions,
+    handleUserActivity,
+    setIsUserActive
+  );
   return (
     <>
       <div
