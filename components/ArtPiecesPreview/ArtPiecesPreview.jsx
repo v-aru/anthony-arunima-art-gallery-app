@@ -62,7 +62,7 @@ function ArtPiecesPreview({
               href={`/art-pieces/${slug}`}
               onClick={() => onSetArtPieceInFocus(slug)}
             >
-              {title}
+              see Details
             </Link>
           </LinkWrapper>
         </>
