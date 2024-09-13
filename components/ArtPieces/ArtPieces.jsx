@@ -58,7 +58,10 @@ function ArtPieces({
           dimensions,
           colors,
           imageSource,
-        }) => {
+        }) => {  
+          const isFavourite = favourites.some(fav => fav.slug === slug);
+
+       
 
           return (
             <>

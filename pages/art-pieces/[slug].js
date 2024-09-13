@@ -6,8 +6,7 @@ import styled from "styled-components";
 export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFavourite }) {
 
   const router = useRouter();
-  const { slug, name, artist, year, genre, dimensions, imageSource } =
-    artPieceInFocus;
+  
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -16,6 +15,10 @@ export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFa
   if (!artPieceInFocus) {
     return <div>Art piece not found</div>;
   }
+
+  const { slug, name, artist, year, genre, dimensions, imageSource } =
+    artPieceInFocus;
+    
   const Root = styled.section`
     width: 100%;
     height: 100%;

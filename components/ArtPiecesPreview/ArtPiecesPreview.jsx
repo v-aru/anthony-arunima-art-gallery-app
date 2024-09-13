@@ -6,7 +6,6 @@ import {
   Root,
   ButtonWrapper,
 
-
   Caption,
   ImageInfo,
   FlowingText,
@@ -14,7 +13,6 @@ import {
   ColorCirclesWrapper,
   Circle,
 } from "./artPiecesPreviewStyles";
-
 
 function ArtPiecesPreview({
   slug,

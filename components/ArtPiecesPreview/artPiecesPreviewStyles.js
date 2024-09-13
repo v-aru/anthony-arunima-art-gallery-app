@@ -96,4 +96,3 @@ export const Circle = styled.span`
 
   border-radius: 50%;
 `;
-
