@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import ArtPiecesPreview from '@/components/ArtPiecesPreview/ArtPiecesPreview';
 import Title from '@/components/Title/Title';
 import { useFavourites } from '../components/Favourites/FavouritesContext.js'
+import FavouritesButton from '@/components/Favourites/FavouritesButton.jsx'; 
+
 
 
 const Container = styled.div`
@@ -31,30 +33,42 @@ const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px; /* Adjust the width as needed */
-  margin: 1rem; /* Adjust margin as needed */
-  border: 1px solid #ddd; /* Optional: Add a border for better visual separation */
-  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+  width: 300px; 
+  height: 400px;
+  margin: 1rem; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
   overflow: hidden; /* Ensure children don't overflow the container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a card-like appearance */
+  position: sticky;
+`;
+
+const FixedImage = styled.img`
+  width: 200px; /* Set a fixed width */
+  height: 280px; /* Set a fixed height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
 `;
 
 const ArtInfo = styled.div`
   text-align: center;
+  margin-top: 50px;
   padding: 1rem;
   font-size: 0.9rem;
   color: #555;
-  background-color: #f9f9f9; /* Optional: Add background color for better contrast */
-  width: 100%; /* Make sure this takes the full width of the container */
-`;
-const ArtistName = styled.div`
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  background-color: #f9f9f9; 
+  width: 100%; 
 `;
 
-const GenreYear = styled.div`
+const ArtistGenreYear = styled.div`
   font-size: 0.8rem;
   color: #777;
+`;
+
+const FavoriteButtonContainer = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
 `;
 
 const FavouritesPage = () => {
@@ -79,28 +93,20 @@ const FavouritesPage = () => {
           <Content>
             {favourites.map( piece => {
               const dimensions = { width: piece.width, height: piece.height };
+              const isFavourite = favourites.some(fav => fav.slug === piece.slug);
               return(
                 <ItemContainer key={piece.slug}>
-                  <ArtPiecesPreview
-                      key={piece.slug}
-                      slug={piece.slug}
-                      artist={piece.artist}
-                      title={piece.title}
-                      year={piece.year}
-                      genre={piece.genre}
-                      width={piece.width}
-                      height={piece.height}
-                      image={piece.imageSource}
-                      artPieceInfo={favourites}
-                      onToggleFavourite={() => toggleFavourite(piece.slug, piece.artist, piece.title, piece.imageSource, dimensions)}
-                      isInFocus={false} 
-                      isFavourite={true}
+                  <FavoriteButtonContainer> 
+                    <FavouritesButton 
+                      isFavourite={isFavourite} 
+                      onToggleFavourite={() => toggleFavourite( piece.slug, piece.artist, piece.title, piece.imageSource, dimensions)}
                     />
+                    </FavoriteButtonContainer>
+                  <FixedImage src={piece.imageSource} alt={piece.src}/>
                     <ArtInfo>
-                      <GenreYear>{piece.genre} | {piece.year}</GenreYear>
+                      <ArtistGenreYear>{piece.artist} | {piece.genre} | {piece.year}</ArtistGenreYear>
                   </ArtInfo>
                 </ItemContainer>
-
               );
               })}
           </Content>
