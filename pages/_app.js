@@ -3,8 +3,7 @@ import useSWR, { SWRConfig } from "swr";
 import Layout from "@/components/Layout/Layout";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { FavouritesProvider } from '../components/Favourites/FavouritesContext.js'
-
+import { FavouritesProvider } from "../components/Favourites/FavouritesContext.js";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -19,21 +18,20 @@ const LoadingWrapper = styled.div`
 const URL = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
-  const [artPieceInFocusId, setArtPieceInFocusId] = useState(null); //FIX: discuss if "Id" should be renamed to "slug"
   const [artPieceInFocus, setArtPieceInFocus] = useState(null); //TODO: Remove setArtPieceInFocus and refactor useState to simple "const"?
 
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
+  const handleSetArtPieceInFocus = (slug) => {
+    const artPiece = data.find((piece) => piece.slug === slug);
+    setArtPieceInFocus(artPiece);
+  };
   useEffect(() => {
-    const handleSetArtPieceInFocus = () => {
-      const artPiece = data.find((piece) => piece.slug === artPieceInFocusId);
-      setArtPieceInFocus(artPiece);
-    };
     if (!isLoading && !error) {
       handleSetArtPieceInFocus();
     }
-  }, [data, artPieceInFocusId, isLoading, error]);
- 
+  }, [data, isLoading, error]);
+
   if (error) {
     return <div>An error occurred. Please try again!</div>;
   }
@@ -51,7 +49,7 @@ export default function App({ Component, pageProps }) {
               {...pageProps}
               data={data}
               artPieceInFocus={artPieceInFocus}
-              setArtPieceInFocusId={setArtPieceInFocusId}
+              onSetArtPieceInFocus={handleSetArtPieceInFocus}
             />
           </Layout>
         </FavouritesProvider>

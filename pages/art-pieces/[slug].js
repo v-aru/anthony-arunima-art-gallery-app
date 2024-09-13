@@ -1,10 +1,14 @@
 import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
+import CommentsList from "@/components/CommentsList/CommentsList";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
 
-export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFavourite }) {
-
+export default function ArtPiecePage({
+  artPieceInFocus,
+  artPieceInfo,
+  onToggleFavourite,
+}) {
   const router = useRouter();
   
 
@@ -23,7 +27,7 @@ export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFa
     width: 100%;
     height: 100%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -35,6 +39,15 @@ export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFa
         props.colors && `linear-gradient(0.25turn, ${props.colors.join(", ")}) `
       );
     }};
+  `;
+  const CommentsWrapper = styled.section`
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
   `;
   return (
     <Root colors={artPieceInFocus.colors}>
@@ -52,6 +65,9 @@ export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFa
         artPieceInfo={artPieceInfo}
         onToggleFavourite={onToggleFavourite}
       />
+      <CommentsWrapper>
+        <CommentsList artPieceInFocus={artPieceInFocus} />
+      </CommentsWrapper>
     </Root>
   );
 }
