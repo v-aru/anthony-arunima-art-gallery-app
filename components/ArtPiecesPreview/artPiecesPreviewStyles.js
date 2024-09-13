@@ -26,13 +26,6 @@ export const ButtonWrapper = styled.div`
   pointer-events: all;
 `;
 
-//TODO: discuss to introduce image style "onHover" so that the Link/Icon gets more visible
-// export const ImageWrapper = styled.div`
-//   filter: blur(0px);
-//   &:hover {
-//     filter: blur(4px);
-//   }
-// `;
 export const Caption = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -62,7 +55,6 @@ export const FlowingText = styled.p`
 export const LinkWrapper = styled.div`
   z-index: 10;
   width: 100%;
-  ${"" /* height: fit-content; */}
   height: 100%;
   position: absolute;
   top: 50%;

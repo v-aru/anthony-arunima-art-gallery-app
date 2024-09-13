@@ -33,13 +33,7 @@ function ArtPiecesPreview({
   const actualHeight = viewWidth / aspectRatio;
 
   const isInFocus = artPieceInFocus?.slug === slug;
-  console.log(
-    artPieceInFocus,
-    artPieceInFocus?.slug,
-    slug,
-    artPieceInFocus?.slug === slug,
-    isInFocus
-  );
+
   const currentArtPiece = artPieceInfo?.find((piece) => piece.slug === slug);
 
 

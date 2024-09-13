@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import {
   StyledCommentWrapper,
   StyledCommentHeader,
@@ -10,7 +9,7 @@ import {
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-dayjs.extend(relativeTime); // Make sure to extend dayjs with the relativeTime plugin
+dayjs.extend(relativeTime);
 
 export default function Comment({ commentObj }) {
   const apiSeed = [
@@ -42,8 +41,6 @@ export default function Comment({ commentObj }) {
     <StyledCommentWrapper>
       <StyledCommentHeader>
         <StyledAvatar>
-          {/* <Image   // next.js/Image does not like svg…
-      /> */}
           <img
             src={avatarUrl}
             alt={"apiSeed"}

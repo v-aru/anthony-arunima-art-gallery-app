@@ -4,7 +4,6 @@ import { mockCommentsArray } from "./mockCommentsArray";
 import Comment from "../Comment/Comment";
 
 export default function CommentsList({ artPieceInFocus }) {
-  console.log(artPieceInFocus);
   const [filteredCommentsBySlug, setFilteredCommentsBySlug] =
     useState(mockCommentsArray);
 

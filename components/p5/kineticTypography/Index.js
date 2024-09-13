@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 
 import dynamic from "next/dynamic";
 const Sketch = dynamic(() => import("./Sketch"), {
@@ -13,7 +13,6 @@ export default function SketchWrapper({ containerRef, textToWrite }) {
 
   const width = dimensions?.width;
   const height = dimensions?.height;
-  const padding = -200;
 
   useEffect(() => {
     setIsClient(true);

@@ -1,10 +1,9 @@
-import styled from 'styled-components';
-import ArtPiecesPreview from '@/components/ArtPiecesPreview/ArtPiecesPreview';
-import Title from '@/components/Title/Title';
-import { useFavourites } from '../components/Favourites/FavouritesContext.js'
+
+import styled from "styled-components";
+import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
+import Title from "@/components/Title/Title";
+import { useFavourites } from "../components/Favourites/FavouritesContext.js";
 import FavouritesButton from '@/components/Favourites/FavouritesButton.jsx'; 
-
-
 
 const Container = styled.div`
   display: flex;
@@ -84,7 +83,6 @@ const FavouritesPage = () => {
         </>
     );
   }
-  console.log(favourites);
 
   return (
     <>
@@ -113,6 +111,6 @@ const FavouritesPage = () => {
         </Container>
     </>
   );
-}
+};
 
 export default FavouritesPage;

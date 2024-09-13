@@ -1,7 +1,6 @@
 import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
 import CommentsList from "@/components/CommentsList/CommentsList";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import styled from "styled-components";
 import { useFavourites } from "@/components/Favourites/FavouritesContext";
 
@@ -16,13 +15,12 @@ const Root = styled.section`
     padding: 1rem;
     gap: 1rem;
     background: ${(props) => {
-      console.log(artPieceInFocus);
       return (
         props.colors && `linear-gradient(0.25turn, ${props.colors.join(", ")}) `
       );
     }};
-  `;
-  const CommentsWrapper = styled.section`
+`;
+const CommentsWrapper = styled.section`
     width: fit-content;
     height: 100%;
     display: flex;
@@ -30,7 +28,7 @@ const Root = styled.section`
     flex: 1;
     justify-content: flex-start;
     align-items: center;
-  `;
+`;
 
 export default function ArtPiecePage({
   artPieceInFocus,
