@@ -1,8 +1,5 @@
-import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import Favourites from "../Favourites/Favourites";
+import FavouritesButton from "../Favourites/FavouritesButton";
 import { Root, Piece, Artist } from "./spotlightStyles";
 
 export default function Spotlight({
@@ -27,7 +24,7 @@ export default function Spotlight({
   return (
     <Root colors={colors}>
       <Piece>
-        <Favourites
+        <FavouritesButton
           slug={slug}
           artPieceInfo={artPieceInfo}
           onToggleFavourite={onToggleFavourite}
@@ -35,8 +32,8 @@ export default function Spotlight({
         <Image
           src={image}
           alt="spotlight piece"
-          width={width * 0.2}
-          height={height * 0.2}
+          width={width * 0.18}
+          height={height * 0.18}
         />
       </Piece>
       <Artist>{artist}</Artist>

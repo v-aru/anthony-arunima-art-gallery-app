@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     background-color: transparent;
     border: none;
     position: absolute;
@@ -11,23 +11,26 @@ const Button = styled.button`
 
     svg {
         display: block;
-        height: 1em;
-        width: 1em;
-        color: red;
+        height: 1.5rem;
+        width: 1.5rem;
+        color: ${({ isFavourite }) => (isFavourite ? 'red' : 'black')};
+        object-fit: contain;
     }
 `;
 
 const SVGWrapper = styled.span`
-    font-size: clamp(2rem, 4vw, 5rem);
+    font-size: 2rem
+    object-fit: contain;
 `;
 
-const Favourites = ({ slug, artPieceInfo, onToggleFavourite}) => {
-    const { isFavourite } = artPieceInfo.find((piece) => piece.slug === slug) ?? { 
+const FavouritesButton = ({ slug, artistName, artPieceInfo, onToggleFavourite}) => {
+
+    const { isFavourite } = artPieceInfo?.find((piece) => piece.slug === slug) ?? { 
         isFavourite: false
     };
 
     return (
-        <Button type="button" onClick={() => onToggleFavourite(slug)} isFavourite={isFavourite} >
+        <Button type="button" onClick={() => onToggleFavourite(slug, artistName)} isFavourite={isFavourite} >
             <SVGWrapper>
                 <svg
                     stroke="currentColor"
@@ -41,4 +44,4 @@ const Favourites = ({ slug, artPieceInfo, onToggleFavourite}) => {
     )
 }
 
-export default Favourites;
+export default FavouritesButton;

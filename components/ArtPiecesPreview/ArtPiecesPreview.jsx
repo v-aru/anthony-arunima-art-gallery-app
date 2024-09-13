@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useWindowSize } from "@uidotdev/usehooks";
 import Link from "next/link";
-import Favourites from "../Favourites/Favourites";
+import FavouritesButton from "../Favourites/FavouritesButton";
 import {
   Root,
   ButtonWrapper,
@@ -15,7 +15,6 @@ import {
 } from "./artPiecesPreviewStyles";
 
 function ArtPiecesPreview({
-  dataSlug,
   slug,
   artist,
   title,
@@ -29,22 +28,21 @@ function ArtPiecesPreview({
   onToggleFavourite,
   onSetArtPieceInFocus,
 }) {
-  const viewWidth = useWindowSize().width * 0.4;
+  const viewWidth = useWindowSize().width * 0.2;
   const aspectRatio = width / height;
   const actualHeight = viewWidth / aspectRatio;
 
   return (
     <Root data-slug={slug}>
-      {/* <ImageWrapper> */}
+      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
       <ButtonWrapper>
-        <Favourites
+        <FavouritesButton
           slug={slug}
+          artist={artist}
           artPieceInfo={artPieceInfo}
           onToggleFavourite={onToggleFavourite}
         />
       </ButtonWrapper>
-      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
-      {/* </ImageWrapper> */}
 
       {!isInFocus ? (
         <>
