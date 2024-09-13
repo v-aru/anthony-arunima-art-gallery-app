@@ -25,6 +25,7 @@ function ArtPiecesPreview({
   artPieceInFocus,
   artPieceInfo,
   onToggleFavourite,
+  isFavourite,
   onSetArtPieceInFocus,
 }) {
   const viewWidth = useWindowSize().width * 0.2;
@@ -40,7 +41,7 @@ function ArtPiecesPreview({
     isInFocus
   );
   const currentArtPiece = artPieceInfo?.find((piece) => piece.slug === slug);
-  const isFavourite = currentArtPiece?.isFavourite ?? false;
+
 
   return (
     <Root data-slug={slug} isInFocus={isInFocus}>

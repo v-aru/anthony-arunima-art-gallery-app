@@ -19,7 +19,7 @@ export function FavouritesProvider({ children }) {
   }, [favourites]);
 
   // Example of toggleFavourite in FavouritesContext
-  const toggleFavourite = (slug, artist, title, imageSource, dimensions) => {
+  const toggleFavourite = (slug, artist, title, imageSource, dimensions, genre, year) => {
     const isAlreadyFavourite = favourites.some(fav => fav.slug === slug);
 
     if (isAlreadyFavourite) {
@@ -27,7 +27,7 @@ export function FavouritesProvider({ children }) {
         prevFavourites.filter(fav => fav.slug !== slug)
       );
     } else {
-      const newFavourite = { slug, artist, title, imageSource, ...dimensions };
+      const newFavourite = { slug, artist, title, imageSource, ...dimensions, genre, year };
       setFavourites(prevFavourites => [...prevFavourites, newFavourite]);
     }
   };

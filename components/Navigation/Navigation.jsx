@@ -8,6 +8,7 @@ const Root = styled.div`
     background: lightgray
     align-items: center;
     text-align-center;
+    border-radius: 18px;
 `;
 
 const Link = styled(NextLink)`
@@ -21,12 +22,12 @@ const Link = styled(NextLink)`
     width: 100%;
 
     &:hover {
-        background-color: ${(props) => (props.isActive ? '#333' : 'lightgray')};
-        color: ${(props) => (props.isActive ? 'white' : '#333')};
+        background-color: ${(props) => (props.isActive ? '#8C92AD' : '#C7CCDB')};
+        color: ${(props) => (props.isActive ? 'white' : '#484B57')};
     }
 
-    background-color: ${(props) => (props.isActive ? '#333' : 'lightgray')};
-    color: ${(props) => (props.isActive ? 'white' : 'inherit')};
+    background-color: ${(props) => (props.isActive ? '#9096B4' : '#2A324B')};
+    color: ${(props) => (props.isActive ? '#484B57' : 'white')};
 `;
 
 

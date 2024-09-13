@@ -13,6 +13,7 @@ const Root = styled.div`
   align-items: center;
   gap: 1rem;
   overflow: scroll;
+  background-color: white;
 `;
 function ArtPieces({
   pieces,
@@ -75,7 +76,7 @@ function ArtPieces({
                 height={dimensions.height}
                 image={imageSource}
                 artPieceInFocus={artPieceInFocus}
-                onToggleFavourite={() => toggleFavourite(slug, artist, title, imageSource, dimensions)}
+                onToggleFavourite={() => toggleFavourite(slug, artist, title, imageSource, dimensions, genre, year)}
                 isFavourite={isFavourite}
                 onSetArtPieceInFocus={onSetArtPieceInFocus}
               />

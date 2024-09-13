@@ -71,13 +71,15 @@ export default function SpotlightPage({
         {" "}
         <Spotlight
           slug={randomPiece.slug}
+          genre={randomPiece.genre}
+          year={randomPiece.year}
           image={randomPiece.imageSource}
           colors={randomPiece.colors}
           artist={randomPiece.artist}
           width={randomPiece.dimensions.width}
           height={randomPiece.dimensions.height}
           artPieceInfo={favourites}
-          onToggleFavourite={() => toggleFavourite(randomPiece.slug, randomPiece.artist, randomPiece.title, randomPiece.imageSource, randomPiece.dimensions)}
+          onToggleFavourite={() => toggleFavourite(randomPiece.slug, randomPiece.artist, randomPiece.title, randomPiece.imageSource, randomPiece.dimensions, randomPiece.genre, randomPiece.year)}
         />
       </div>{" "}
     </Root>
