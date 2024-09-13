@@ -17,8 +17,6 @@ const Root = styled.div`
 function ArtPieces({
   pieces,
   artPieceInFocus,
-  artPieceInfo,
-  onToggleFavourite,
   onSetArtPieceInFocus,
 }) {
   const artPiecesRef = useRef(null);
@@ -52,15 +50,16 @@ function ArtPieces({
         ({
           slug,
           name,
+          title,
           artist,
           year,
           genre,
           dimensions,
           colors,
-          imageSource,
-        }) => {  
+          imageSource
+        }) => {
+        
           const isFavourite = favourites.some(fav => fav.slug === slug);
-
 
           return (
             <>
@@ -76,8 +75,7 @@ function ArtPieces({
                 height={dimensions.height}
                 image={imageSource}
                 artPieceInFocus={artPieceInFocus}
-                artPieceInfo={favourites}
-                onToggleFavourite={toggleFavourite}
+                onToggleFavourite={() => toggleFavourite(slug, artist, title, imageSource, dimensions)}
                 isFavourite={isFavourite}
                 onSetArtPieceInFocus={onSetArtPieceInFocus}
               />

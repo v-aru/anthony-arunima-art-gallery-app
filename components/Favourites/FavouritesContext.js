@@ -7,9 +7,9 @@ export function FavouritesProvider({ children }) {
 
   useEffect(() => {
     // Load favorites from local storage on initial load
-    const savedFavourites = localStorage.getItem('favourites');
+    const savedFavourites = JSON.parse(localStorage.getItem('favourites'));
     if (savedFavourites) {
-      setFavourites(JSON.parse(savedFavourites));
+      setFavourites(savedFavourites);
     }
   }, []);
 
@@ -18,20 +18,20 @@ export function FavouritesProvider({ children }) {
     localStorage.setItem('favourites', JSON.stringify(favourites));
   }, [favourites]);
 
-  const toggleFavourite = (slug, artistName) => {
-    setFavourites((prevFavourites) => {
-      const index = prevFavourites.findIndex((fav) => fav.slug === slug);
-      if (index === -1) {
-        // Item is not in the list, add it
-        return [...prevFavourites, { slug, artistName, isFavourite: true }];
-      } else {
-        // Item is in the list, remove it
-        const newFavourites = [...prevFavourites];
-        newFavourites.splice(index, 1);
-        return newFavourites;
-      }
-    });
+  // Example of toggleFavourite in FavouritesContext
+  const toggleFavourite = (slug, artist, title, imageSource, dimensions) => {
+    const isAlreadyFavourite = favourites.some(fav => fav.slug === slug);
+
+    if (isAlreadyFavourite) {
+      setFavourites(prevFavourites =>
+        prevFavourites.filter(fav => fav.slug !== slug)
+      );
+    } else {
+      const newFavourite = { slug, artist, title, imageSource, ...dimensions };
+      setFavourites(prevFavourites => [...prevFavourites, newFavourite]);
+    }
   };
+
 
   return (
     <FavouritesContext.Provider value={{ favourites, toggleFavourite }}>

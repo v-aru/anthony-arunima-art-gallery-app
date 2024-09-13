@@ -30,6 +30,7 @@ function ArtPiecesPreview({
   const viewWidth = useWindowSize().width * 0.2;
   const aspectRatio = width / height;
   const actualHeight = viewWidth / aspectRatio;
+
   const isInFocus = artPieceInFocus?.slug === slug;
   console.log(
     artPieceInFocus,
@@ -38,6 +39,8 @@ function ArtPiecesPreview({
     artPieceInFocus?.slug === slug,
     isInFocus
   );
+  const currentArtPiece = artPieceInfo?.find((piece) => piece.slug === slug);
+  const isFavourite = currentArtPiece?.isFavourite ?? false;
 
   return (
     <Root data-slug={slug} isInFocus={isInFocus}>
@@ -46,8 +49,11 @@ function ArtPiecesPreview({
         <FavouritesButton
           slug={slug}
           artist={artist}
+          title={title}
+          image={image}
           artPieceInfo={artPieceInfo}
           onToggleFavourite={onToggleFavourite}
+          isFavourite={isFavourite}
         />
       </ButtonWrapper>
 
