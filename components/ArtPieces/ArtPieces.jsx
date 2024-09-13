@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import ArtPiecesPreview from "../ArtPiecesPreview/ArtPiecesPreview.jsx";
 import ScrollPositionIndicator from "../ScrollIndicator/ScrollPositionIndicator.js";
+import { useFavourites } from '../Favourites/FavouritesContext.js'
 
 const Root = styled.div`
   width: 100%;
-  height: 70%;
+  height: 80%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -21,6 +22,7 @@ function ArtPieces({
   onSetArtPieceInFocus,
 }) {
   const artPiecesRef = useRef(null);
+  const { favourites, toggleFavourite } = useFavourites();
 
   const scrollToPiece = (piece) => {
     if (artPiecesRef.current) {
@@ -72,8 +74,9 @@ function ArtPieces({
                 height={dimensions.height}
                 image={imageSource}
                 artPieceInFocus={artPieceInFocus}
-                artPieceInfo={artPieceInfo}
-                onToggleFavourite={onToggleFavourite}
+                artPieceInfo={favourites}
+                onToggleFavourite={toggleFavourite}
+                isFavourite={isFavourite}
                 onSetArtPieceInFocus={onSetArtPieceInFocus}
               />
             </>

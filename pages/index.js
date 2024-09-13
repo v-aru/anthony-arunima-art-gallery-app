@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import Spotlight from "../components/Spotlight/Spotlight";
+
+
 import { useEffect, useRef, useState } from "react";
 import SketchWrapper from "@/components/p5/kineticTypography/Index";
-
 //import Title from "@/components/Title/Title";
+import { useFavourites } from "@/components/Favourites/FavouritesContext";
 
 
 const Root = styled.main`
@@ -24,6 +26,7 @@ export default function SpotlightPage({
 }) {
   const containerRef = useRef(null);
   const [randomPiece, setRandomPiece] = useState(null);
+  const { favourites, toggleFavourite } = useFavourites();
 
   useEffect(() => {
     // Select random art piece only once, when the component mounts
@@ -81,8 +84,8 @@ export default function SpotlightPage({
         artist={randomPiece.artist}
         width={randomPiece.dimensions.width}
         height={randomPiece.dimensions.height}
-        artPieceInfo={artPieceInfo}
-        onToggleFavourite={onToggleFavourite}
+        artPieceInfo={favourites}
+        onToggleFavourite={(slug) => toggleFavourite(slug, randomPiece.artist)}
       />
 
     </Root>

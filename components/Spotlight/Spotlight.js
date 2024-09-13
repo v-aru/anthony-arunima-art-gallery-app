@@ -1,8 +1,5 @@
-import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import Favourites from "../Favourites/Favourites";
+import FavouritesButton from "../Favourites/FavouritesButton";
 import { Root, Piece, Artist } from "./spotlightStyles";
 
 export default function Spotlight({
@@ -43,7 +40,7 @@ export default function Spotlight({
   return (
     <Root colors={colors} movement={movement}>
       <Piece>
-        <Favourites
+        <FavouritesButton
           slug={slug}
           artPieceInfo={artPieceInfo}
           onToggleFavourite={onToggleFavourite}
@@ -56,6 +53,7 @@ export default function Spotlight({
           style={{
             boxShadow: `3px 3px ${colors[2]}, -1em 0 -1em ${colors[0]}`,
           }}
+
         />
       </Piece>
       <Artist>{artist}</Artist>
