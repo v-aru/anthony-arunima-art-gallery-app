@@ -80,7 +80,12 @@ function ArtPiecesPreview({
             <FlowingText>By {artist}</FlowingText>
           </Caption>
           <FlowingText>{year}</FlowingText>
-          <FlowingText>{genre}</FlowingText>
+          <FlowingText>{genre}</FlowingText>{" "}
+          <ColorCirclesWrapper>
+            {artPieceInFocus?.colors.map((color, index) => (
+              <Circle key={index} color={color} />
+            ))}
+          </ColorCirclesWrapper>
         </ImageInfo>
       )}
     </Root>
