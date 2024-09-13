@@ -1,8 +1,15 @@
 import styled from "styled-components";
 import Spotlight from "../components/Spotlight/Spotlight";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import SketchWrapper from "@/components/p5/kineticTypography/Index";
 
 const Root = styled.main`
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
   color: #888;
 `;
 
@@ -17,6 +24,7 @@ export default function SpotlightPage({
   artPieceInfo,
   onToggleFavourite,
 }) {
+  const containerRef = useRef(null);
   const [randomPiece, setRandomPiece] = useState(null);
 
   useEffect(() => {
@@ -33,16 +41,41 @@ export default function SpotlightPage({
 
   return (
     <Root>
-      <Title>ART GALLERY - SPOTLIGHT</Title>
-      <Spotlight
-        image={randomPiece.imageSource}
-        colors={randomPiece.colors}
-        artist={randomPiece.artist}
-        width={randomPiece.dimensions.width}
-        height={randomPiece.dimensions.height}
-        artPieceInfo={artPieceInfo}
-        onToggleFavourite={onToggleFavourite}
-      />
+      <div
+        ref={containerRef}
+        style={{
+          width: "100%",
+          height: "100px",
+        }}
+      >
+        <SketchWrapper
+          containerRef={containerRef}
+          textToWrite={"Brush'n'Byte, Berlin"}
+        />{" "}
+      </div>{" "}
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexFlow: "column nowrap",
+          // flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          color: "#888",
+        }}
+      >
+        {" "}
+        <Spotlight
+          image={randomPiece.imageSource}
+          colors={randomPiece.colors}
+          artist={randomPiece.artist}
+          width={randomPiece.dimensions.width}
+          height={randomPiece.dimensions.height}
+          artPieceInfo={artPieceInfo}
+          onToggleFavourite={onToggleFavourite}
+        />
+      </div>{" "}
     </Root>
   );
 }
