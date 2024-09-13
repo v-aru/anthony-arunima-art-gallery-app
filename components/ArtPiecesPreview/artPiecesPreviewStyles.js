@@ -83,3 +83,16 @@ export const LinkWrapper = styled.div`
     overflow-wrap: break-word;
   }
 `;
+
+export const ColorCirclesWrapper = styled.span`
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1;
+`;
+export const Circle = styled.span`
+  height: 25px;
+  width: 25px;
+  background: ${(props) => props.color};
+
+  border-radius: 50%;
+`;

@@ -49,8 +49,18 @@ function ArtPieces({
       {" "}
       <ScrollPositionIndicator artPiecesRef={artPiecesRef} />
       {pieces?.map(
-        ({ slug, name, artist, year, genre, dimensions, imageSource }) => {
-          const isFavourite = favourites.some(fav => fav.slug === slug);
+        ({
+          slug,
+          name,
+          artist,
+          year,
+          genre,
+          dimensions,
+          colors,
+          imageSource,
+        }) => {
+         const isFavourite = favourites.some(fav => fav.slug === slug);
+
           return (
             <>
               <ArtPiecesPreview

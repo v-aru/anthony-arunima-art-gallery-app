@@ -4,12 +4,16 @@ import Link from "next/link";
 import FavouritesButton from "../Favourites/FavouritesButton";
 import {
   Root,
+  ButtonWrapper,
+
   Caption,
   ImageInfo,
   FlowingText,
   LinkWrapper,
-  ButtonWrapper,
+  ColorCirclesWrapper,
+  Circle,
 } from "./artPiecesPreviewStyles";
+
 function ArtPiecesPreview({
   slug,
   artist,
