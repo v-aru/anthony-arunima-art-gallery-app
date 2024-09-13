@@ -11,6 +11,8 @@ import {
   LinkWrapper,
   ColorCirclesWrapper,
   Circle,
+  CardContainer,
+  ImageWrapper
 } from "./artPiecesPreviewStyles";
 
 function ArtPiecesPreview({
@@ -33,56 +35,58 @@ function ArtPiecesPreview({
   const actualHeight = viewWidth / aspectRatio;
 
   const isInFocus = artPieceInFocus?.slug === slug;
-
   const currentArtPiece = artPieceInfo?.find((piece) => piece.slug === slug);
-
 
   return (
     <Root data-slug={slug} isInFocus={isInFocus}>
-      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
-      <ButtonWrapper>
-        <FavouritesButton
-          slug={slug}
-          artist={artist}
-          title={title}
-          image={image}
-          artPieceInfo={artPieceInfo}
-          onToggleFavourite={onToggleFavourite}
-          isFavourite={isFavourite}
-        />
-      </ButtonWrapper>
-
-      {!isInFocus ? (
-        <>
-          <Caption>
-            <strong>{title}</strong>&nbsp;By&nbsp;<em>{artist}</em>
-          </Caption>
-          <LinkWrapper>
-            <Link
-              href={`/art-pieces/${slug}`}
-              onClick={() => onSetArtPieceInFocus(slug)}
-            >
-              see Details
-            </Link>
-          </LinkWrapper>
-        </>
-      ) : (
-        <ImageInfo>
-          <Caption>
-            <FlowingText>
-              <strong>{title}</strong>
-            </FlowingText>
-            <FlowingText>By {artist}</FlowingText>
-          </Caption>
-          <FlowingText>{year}</FlowingText>
-          <FlowingText>{genre}</FlowingText>{" "}
-          <ColorCirclesWrapper>
-            {artPieceInFocus?.colors.map((color, index) => (
-              <Circle key={index} color={color} />
-            ))}
-          </ColorCirclesWrapper>
-        </ImageInfo>
-      )}
+      <CardContainer key={slug}>
+        <ImageWrapper>
+          <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
+          </ImageWrapper>
+          <ButtonWrapper>
+            <FavouritesButton
+              slug={slug}
+              artist={artist}
+              title={title}
+              image={image}
+              artPieceInfo={artPieceInfo}
+              onToggleFavourite={onToggleFavourite}
+              isFavourite={isFavourite}
+            />
+          </ButtonWrapper>
+        {/* </ImageWrapper> */}
+        {!isInFocus ? (
+          <>
+            <Caption>
+              <strong>{title}</strong>&nbsp;By&nbsp;<em>{artist}</em>
+            </Caption>
+            <LinkWrapper>
+              <Link
+                href={`/art-pieces/${slug}`}
+                onClick={() => onSetArtPieceInFocus(slug)}
+              >
+                see Details
+              </Link>
+            </LinkWrapper>
+          </>
+        ) : (
+          <ImageInfo>
+            <Caption>
+              <FlowingText>
+                <strong>{title}</strong>
+              </FlowingText>
+              <FlowingText>By {artist}</FlowingText>
+            </Caption>
+            <FlowingText>{year}</FlowingText>
+            <FlowingText>{genre}</FlowingText>{" "}
+            <ColorCirclesWrapper>
+              {artPieceInFocus?.colors.map((color, index) => (
+                <Circle key={index} color={color} />
+              ))}
+            </ColorCirclesWrapper>
+          </ImageInfo>
+        )}
+      </CardContainer>
     </Root>
   );
 }
