@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useResizeObserver = (
+export const useResizeObserver = (
   nestedRef,
   setDimensions,
   handleUserActivity,
@@ -31,5 +31,3 @@ const useResizeObserver = (
     };
   }, [handleUserActivity]);
 };
-
-export default useResizeObserver;

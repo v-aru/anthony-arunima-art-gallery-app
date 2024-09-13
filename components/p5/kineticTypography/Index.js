@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 import dynamic from "next/dynamic";
-import useResizeObserver from "../../../hooks/useResizeObserver";
+import { useResizeObserver } from "../../../hooks/useResizeObserver";
 const Sketch = dynamic(() => import("./Sketch"), {
   ssr: false,
 });
