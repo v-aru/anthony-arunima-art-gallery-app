@@ -17,13 +17,10 @@ const Message = styled.p`
   color: gray;
 `;
 
-export default function FavouritesPage({ artPieceInfo = [], onToggleFavourite }) {
-    const { favourites, toggleFavourite } = useFavourites();
+const FavouritesPage = () => {
+  const { favourites, toggleFavourite } = useFavourites();
 
-    const favouritePieces = artPieceInfo?.filter(piece => piece.isFavourite);
-  
-
-  if (favouritePieces.length === 0) {
+  if (favourites.length === 0) {
     return (
         <>
         <Title content={"F A V O U R I T E S"} />
@@ -33,32 +30,35 @@ export default function FavouritesPage({ artPieceInfo = [], onToggleFavourite })
         </>
     );
   }
+  console.log(favourites);
 
   return (
     <>
         <Title content={"F A V O U R I T E S"} />
         <Root>
-            {favouritePieces.map( piece => {
+            {favourites.map( piece => {
+              const dimensions = { width: piece.width, height: piece.height };
                 return (
-
-                <ArtPiecesPreview
-                    key={slug}
-                    slug={piece.slug}
-                    artist={piece.artist}
-                    title={piece.title}
-                    year={piece.year}
-                    genre={piece.genre}
-                    width={piece.width}
-                    height={piece.height}
-                    image={piece.imageSource}
-                    artPieceInfo={favourites}
-                    onToggleFavourite={(slug) => toggleFavourite(slug, piece.artist)}
-                    isInFocus={false} 
-                />
-
+                  <ArtPiecesPreview
+                      key={piece.slug}
+                      slug={piece.slug}
+                      artist={piece.artist}
+                      title={piece.title}
+                      year={piece.year}
+                      genre={piece.genre}
+                      width={piece.width}
+                      height={piece.height}
+                      image={piece.imageSource}
+                      artPieceInfo={favourites}
+                      onToggleFavourite={() => toggleFavourite(piece.slug, piece.artist, piece.title, piece.imageSource, dimensions)}
+                      isInFocus={false} 
+                      isFavourite={true}
+                  />
                 );
             })}
         </Root>
     </>
   );
 }
+
+export default FavouritesPage;

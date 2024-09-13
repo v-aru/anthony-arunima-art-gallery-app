@@ -10,9 +10,7 @@ const Root = styled.main`
 
 //Renaming HomePage to SpotlightPage
 export default function SpotlightPage({
-  data,
-  artPieceInfo,
-  onToggleFavourite,
+  data
 }) {
   const [randomPiece, setRandomPiece] = useState(null);
   const { favourites, toggleFavourite } = useFavourites();
@@ -28,6 +26,10 @@ export default function SpotlightPage({
   }, [data]);
 
   if (!randomPiece) return <div>Loading...</div>;
+  if (randomPiece) {
+    console.log("Random piece slug:", randomPiece.slug); // Ensure this is logging a valid slug
+  }
+
 
   return (
     <Root>
@@ -38,10 +40,10 @@ export default function SpotlightPage({
         image={randomPiece.imageSource}
         colors={randomPiece.colors}
         artist={randomPiece.artist}
+        title={randomPiece.title}
         width={randomPiece.dimensions.width}
         height={randomPiece.dimensions.height}
-        artPieceInfo={favourites}
-        onToggleFavourite={(slug) => toggleFavourite(slug, randomPiece.artist)}
+        onToggleFavourite={() => toggleFavourite(randomPiece.slug, randomPiece.artist, randomPiece.title, randomPiece.imageSource, randomPiece.dimensions)}
       />
     </Root>
   );
