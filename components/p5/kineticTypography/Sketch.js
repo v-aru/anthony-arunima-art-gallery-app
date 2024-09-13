@@ -2,14 +2,8 @@ import React, { useState } from "react";
 import { useRef, useEffect } from "react";
 import * as p5 from "p5";
 
-// import fontFile from "../../../public/fonts/NotoSansWarangCiti-Regular.ttf";
-// import fontFile from "../../../public/fonts/Roboto-Black.ttf";
-// import fontFile from "../../../public/fonts/Arvo-Bold.ttf";
-// import fontFile from "../../../public/fonts/Roboto-BlackItalic.ttf";
 import fontFile from "../../../public/fonts/Roboto-Thin.ttf";
-// import fontFile from "../../../public/fonts/Syne-Bold.ttf";
-// import fontFile from "../../../public/fonts/Syne-Regular.ttf";
-// import fontFile from "../../../public/fonts/Syne-VariableFont_wght.ttf";
+
 export default function Sketch({
   width,
   height,
@@ -17,8 +11,6 @@ export default function Sketch({
   mainObjColor,
   backgroundColor,
 }) {
-  console.log(textToWrite, width, height);
-
   const sketchRef = useRef(null);
   let pg;
   var font;
@@ -26,13 +18,10 @@ export default function Sketch({
     p.preload = () => {
       font = p.loadFont(
         fontFile,
-        // "../../../resources/assets/fonts/Syne-Regular.ttf",
-        () => {
-          // console.log("Font loaded successfully!");
-        },
+        () => {},
         (error) => {
           console.error("Error loading Font:", error);
-          font = p.loadFont("Helvetica"); // Fallback to Helvetica
+          font = p.loadFont("Helvetica");
         }
       );
     };

@@ -1,23 +1,15 @@
-import { useWindowSize } from "@uidotdev/usehooks";
 import Image from "next/image";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
+import { Root, StyledCarousellItem } from "./carousellStyles";
 
 export default function Carousell({ pieces, onSetArtPieceInFocus }) {
   const containerRef = useRef(null);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        height: "fit-content",
-        display: "flex",
-        justifyContent: "center",
-        overflowX: "auto",
-      }}
-    >
+    <Root ref={containerRef}>
       {pieces.map((piece) => {
         return (
-          <div
+          <StyledCarousellItem
             key={piece.slug}
             onClick={() => onSetArtPieceInFocus(piece.slug)}
           >
@@ -29,9 +21,9 @@ export default function Carousell({ pieces, onSetArtPieceInFocus }) {
               width={50}
               height={50}
             />
-          </div>
+          </StyledCarousellItem>
         );
       })}
-    </div>
+    </Root>
   );
 }

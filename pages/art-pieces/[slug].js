@@ -1,7 +1,6 @@
 import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
 import CommentsList from "@/components/CommentsList/CommentsList";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import styled from "styled-components";
 
 export default function ArtPiecePage({
@@ -10,7 +9,6 @@ export default function ArtPiecePage({
   onToggleFavourite,
 }) {
   const router = useRouter();
-  
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -22,7 +20,7 @@ export default function ArtPiecePage({
 
   const { slug, name, artist, year, genre, dimensions, imageSource } =
     artPieceInFocus;
-    
+
   const Root = styled.section`
     width: 100%;
     height: 100%;
@@ -34,7 +32,6 @@ export default function ArtPiecePage({
     padding: 1rem;
     gap: 1rem;
     background: ${(props) => {
-      console.log(artPieceInFocus);
       return (
         props.colors && `linear-gradient(0.25turn, ${props.colors.join(", ")}) `
       );

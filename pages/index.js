@@ -3,7 +3,6 @@ import Spotlight from "../components/Spotlight/Spotlight";
 
 import { useEffect, useRef, useState } from "react";
 import SketchWrapper from "@/components/p5/kineticTypography/Index";
-// import Title from "@/components/Title/Title";
 import { useFavourites } from "@/components/Favourites/FavouritesContext";
 
 const Root = styled.main`
@@ -17,9 +16,7 @@ const Root = styled.main`
 `;
 
 //Renaming HomePage to SpotlightPage
-export default function SpotlightPage({
-  data
-}) {
+export default function SpotlightPage({ data }) {
   const containerRef = useRef(null);
   const [randomPiece, setRandomPiece] = useState(null);
   const { favourites, toggleFavourite } = useFavourites();
@@ -39,7 +36,6 @@ export default function SpotlightPage({
     console.log("Random piece slug:", randomPiece.slug); // Ensure this is logging a valid slug
   }
 
-
   return (
     <Root>
       <div
@@ -47,7 +43,6 @@ export default function SpotlightPage({
         style={{
           width: "100%",
           height: "100px",
-          // backgroundColor: "black",
         }}
       >
         <SketchWrapper
@@ -55,31 +50,24 @@ export default function SpotlightPage({
           textToWrite={"Brush'n'Byte, Berlin"}
         />{" "}
       </div>{" "}
-      {/* <Title content={"ART GALLERY - SPOTLIGHT"} /> */}
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexFlow: "column nowrap",
-          // flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#888",
-        }}
-      >
-        {" "}
-        <Spotlight
-          slug={randomPiece.slug}
-          image={randomPiece.imageSource}
-          colors={randomPiece.colors}
-          artist={randomPiece.artist}
-          width={randomPiece.dimensions.width}
-          height={randomPiece.dimensions.height}
-          artPieceInfo={favourites}
-          onToggleFavourite={() => toggleFavourite(randomPiece.slug, randomPiece.artist, randomPiece.title, randomPiece.imageSource, randomPiece.dimensions)}
-        />
-      </div>{" "}
+      <Spotlight
+        slug={randomPiece.slug}
+        image={randomPiece.imageSource}
+        colors={randomPiece.colors}
+        artist={randomPiece.artist}
+        width={randomPiece.dimensions.width}
+        height={randomPiece.dimensions.height}
+        artPieceInfo={favourites}
+        onToggleFavourite={() =>
+          toggleFavourite(
+            randomPiece.slug,
+            randomPiece.artist,
+            randomPiece.title,
+            randomPiece.imageSource,
+            randomPiece.dimensions
+          )
+        }
+      />
     </Root>
   );
 }

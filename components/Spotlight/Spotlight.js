@@ -4,7 +4,6 @@ import { Root, Piece, Artist } from "./spotlightStyles";
 import { useFavourites } from "../Favourites/FavouritesContext";
 import { useEffect, useState } from "react";
 
-
 export default function Spotlight({
   image,
   title,
@@ -12,19 +11,11 @@ export default function Spotlight({
   colors,
   width,
   height,
-  slug
+  slug,
 }) {
   const [movement, setMovement] = useState(0);
-  // const router = useRouter();
-  // const handleClick = () => {
-  //   router.push("/"); // Navigate back to the homepage
-  // };
-
-  const {favourites, toggleFavourite} = useFavourites();
-  const isFavourite = favourites.some(fav => fav.slug === slug);
-
-  //TODO: discuss if the return should be refactored to use the ArtPiecesPreview component
-  //it then could use the Link to the actual ArtPiece Page
+  const { favourites, toggleFavourite } = useFavourites();
+  const isFavourite = favourites.some((fav) => fav.slug === slug);
 
   const someAngle = Math.random() * Math.PI * 2;
   function mapRange(value, fromLow, fromHigh, toLow, toHigh) {
@@ -47,7 +38,9 @@ export default function Spotlight({
           artistName={artist}
           title={title}
           image={image}
-          onToggleFavourite={(slug) => toggleFavourite(slug, artist, title, image, {width, height})}
+          onToggleFavourite={(slug) =>
+            toggleFavourite(slug, artist, title, image, { width, height })
+          }
           isFavourite={isFavourite}
         />
         <Image
