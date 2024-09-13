@@ -3,13 +3,10 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
 
-export default function ArtPiecePage({
-  artPieceInFocus,
-  artPieceInfo,
-  onToggleFavourite,
-}) {
+export default function ArtPiecePage({ artPieceInFocus, artPieceInfo, onToggleFavourite }) {
+
   const router = useRouter();
-  const { slug, name, artist, year, genre, dimensions, colors, imageSource } =
+  const { slug, name, artist, year, genre, dimensions, imageSource } =
     artPieceInFocus;
 
   if (router.isFallback) {
@@ -29,11 +26,15 @@ export default function ArtPiecePage({
     align-items: center;
     padding: 1rem;
     gap: 1rem;
-    background: ${(props) =>
-      props.colors && `linear-gradient(0.25turn, ${props.colors.join(", ")}) `};
+    background: ${(props) => {
+      console.log(artPieceInFocus);
+      return (
+        props.colors && `linear-gradient(0.25turn, ${props.colors.join(", ")}) `
+      );
+    }};
   `;
   return (
-    <Root colors={colors}>
+    <Root colors={artPieceInFocus.colors}>
       <ArtPiecesPreview
         key={slug}
         slug={slug}
@@ -41,7 +42,6 @@ export default function ArtPiecePage({
         artist={artist}
         year={year}
         genre={genre}
-        colors={colors}
         image={imageSource}
         width={dimensions.width}
         height={dimensions.height}

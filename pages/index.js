@@ -3,6 +3,9 @@ import Spotlight from "../components/Spotlight/Spotlight";
 import { useEffect, useRef, useState } from "react";
 import SketchWrapper from "@/components/p5/kineticTypography/Index";
 
+//import Title from "@/components/Title/Title";
+
+
 const Root = styled.main`
   height: 100%;
   display: flex;
@@ -10,11 +13,6 @@ const Root = styled.main`
   flex: 1;
   justify-content: center;
   align-items: center;
-  color: #888;
-`;
-
-const Title = styled.h1`
-  text-align: center;
   color: #888;
 `;
 
@@ -53,6 +51,7 @@ export default function SpotlightPage({
           textToWrite={"Brush'n'Byte, Berlin"}
         />{" "}
       </div>{" "}
+      // <Title content={"ART GALLERY - SPOTLIGHT"} />
       <div
         style={{
           width: "100%",
@@ -76,6 +75,16 @@ export default function SpotlightPage({
           onToggleFavourite={onToggleFavourite}
         />
       </div>{" "}
+      <Spotlight
+        image={randomPiece.imageSource}
+        colors={randomPiece.colors}
+        artist={randomPiece.artist}
+        width={randomPiece.dimensions.width}
+        height={randomPiece.dimensions.height}
+        artPieceInfo={artPieceInfo}
+        onToggleFavourite={onToggleFavourite}
+      />
+
     </Root>
   );
 }

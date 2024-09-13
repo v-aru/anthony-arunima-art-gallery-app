@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const Root = styled.div`
   position: relative;
   display: flex;
@@ -89,3 +90,4 @@ export const Circle = styled.span`
 
   border-radius: 50%;
 `;
+
