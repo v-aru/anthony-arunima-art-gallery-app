@@ -3,7 +3,7 @@ import Spotlight from "../components/Spotlight/Spotlight";
 
 import { useEffect, useRef, useState } from "react";
 import SketchWrapper from "@/components/p5/kineticTypography/Index";
-//import Title from "@/components/Title/Title";
+// import Title from "@/components/Title/Title";
 import { useFavourites } from "@/components/Favourites/FavouritesContext";
 
 const Root = styled.main`
@@ -45,6 +45,7 @@ export default function SpotlightPage({
         style={{
           width: "100%",
           height: "100px",
+          // backgroundColor: "black",
         }}
       >
         <SketchWrapper
@@ -72,19 +73,12 @@ export default function SpotlightPage({
           artist={randomPiece.artist}
           width={randomPiece.dimensions.width}
           height={randomPiece.dimensions.height}
-          artPieceInfo={artPieceInfo}
-          onToggleFavourite={onToggleFavourite}
+          artPieceInfo={favourites}
+          onToggleFavourite={(slug) =>
+            toggleFavourite(slug, randomPiece.artist)
+          }
         />
       </div>{" "}
-      <Spotlight
-        image={randomPiece.imageSource}
-        colors={randomPiece.colors}
-        artist={randomPiece.artist}
-        width={randomPiece.dimensions.width}
-        height={randomPiece.dimensions.height}
-        artPieceInfo={favourites}
-        onToggleFavourite={(slug) => toggleFavourite(slug, randomPiece.artist)}
-      />
     </Root>
   );
 }

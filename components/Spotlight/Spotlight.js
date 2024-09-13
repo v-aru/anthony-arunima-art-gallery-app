@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FavouritesButton from "../Favourites/FavouritesButton";
 import { Root, Piece, Artist } from "./spotlightStyles";
+import { useEffect, useState } from "react";
 
 export default function Spotlight({
   image,
@@ -22,7 +23,7 @@ export default function Spotlight({
 
   //TODO: discuss if the return should be refactored to use the ArtPiecesPreview component
   //it then could use the Link to the actual ArtPiece Page
-  let value;
+
   const someAngle = Math.random() * Math.PI * 2;
   function mapRange(value, fromLow, fromHigh, toLow, toHigh) {
     return (
@@ -32,7 +33,6 @@ export default function Spotlight({
   useEffect(() => {
     const intervalId = setInterval(() => {
       setMovement(mapRange(Math.sin(someAngle), -1, 1, 0, 1));
-      console.log(value);
     }, 40);
     return () => clearInterval(intervalId);
   }, []);
@@ -53,7 +53,6 @@ export default function Spotlight({
           style={{
             boxShadow: `3px 3px ${colors[2]}, -1em 0 -1em ${colors[0]}`,
           }}
-
         />
       </Piece>
       <Artist>{artist}</Artist>

@@ -10,7 +10,6 @@ export default function SketchWrapper({ containerRef, textToWrite }) {
     width: containerRef?.current?.offsetWidth,
     height: containerRef?.current?.offsetHeight,
   });
-  console.log(dimensions);
 
   const width = dimensions?.width;
   const height = dimensions?.height;
@@ -30,9 +29,7 @@ export default function SketchWrapper({ containerRef, textToWrite }) {
         style={{
           width: width,
           height: height,
-          // backgroundColor: "black",
           backgroundColor: "transparent",
-          // paddingBottom: "10rem",
         }}
       >
         {isClient && (
