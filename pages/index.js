@@ -70,6 +70,7 @@ export default function SpotlightPage({
       >
         {" "}
         <Spotlight
+          slug={randomPiece.slug}
           image={randomPiece.imageSource}
           colors={randomPiece.colors}
           artist={randomPiece.artist}
