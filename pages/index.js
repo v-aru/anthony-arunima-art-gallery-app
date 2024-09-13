@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import Spotlight from "../components/Spotlight/Spotlight";
 
-
 import { useEffect, useRef, useState } from "react";
 import SketchWrapper from "@/components/p5/kineticTypography/Index";
 //import Title from "@/components/Title/Title";
 import { useFavourites } from "@/components/Favourites/FavouritesContext";
-
 
 const Root = styled.main`
   height: 100%;
@@ -54,7 +52,7 @@ export default function SpotlightPage({
           textToWrite={"Brush'n'Byte, Berlin"}
         />{" "}
       </div>{" "}
-      // <Title content={"ART GALLERY - SPOTLIGHT"} />
+      {/* <Title content={"ART GALLERY - SPOTLIGHT"} /> */}
       <div
         style={{
           width: "100%",
@@ -87,7 +85,6 @@ export default function SpotlightPage({
         artPieceInfo={favourites}
         onToggleFavourite={(slug) => toggleFavourite(slug, randomPiece.artist)}
       />
-
     </Root>
   );
 }
