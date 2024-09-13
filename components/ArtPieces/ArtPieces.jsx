@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import ArtPiecesPreview from "../ArtPiecesPreview/ArtPiecesPreview.jsx";
 import ScrollPositionIndicator from "../ScrollIndicator/ScrollPositionIndicator.js";
-import { useFavourites } from '../Favourites/FavouritesContext.js'
+import { useFavourites } from "../Favourites/FavouritesContext.js";
 
 const Root = styled.div`
   width: 100%;
@@ -61,12 +61,11 @@ function ArtPieces({
         }) => {  
           const isFavourite = favourites.some(fav => fav.slug === slug);
 
-       
 
           return (
             <>
               <ArtPiecesPreview
-                dataSlug={slug}
+                dataSlug={slug} //TODO: clean this up
                 key={slug}
                 slug={slug}
                 artist={artist}

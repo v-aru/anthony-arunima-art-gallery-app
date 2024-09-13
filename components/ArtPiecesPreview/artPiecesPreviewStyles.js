@@ -9,13 +9,14 @@ export const Root = styled.div`
   border: 2px solid white;
   padding: 2rem;
   overflow: hidden;
+  background: ${(props) => (props.isInFocus ? "black" : "white")};
 `;
 
 export const ButtonWrapper = styled.div`
   position: absolute;
-  top: 10px; 
+  top: 10px;
   right: 10px;
-  z-index: 15; 
+  z-index: 15;
   width: 40px;
   height: 40px;
   display: flex;
@@ -48,10 +49,10 @@ export const ImageInfo = styled.div`
   align-items: center;
   padding: 1rem;
   color: #ccc;
-  background-color: #33343380; 
+  background-color: #33343380;
   border: 1px solid #ccc;
   padding: 15px;
-  margin-top: 10px; 
+  margin-top: 10px;
   font-family: sans-serif;
 `;
 export const FlowingText = styled.p`

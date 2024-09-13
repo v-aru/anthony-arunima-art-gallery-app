@@ -5,7 +5,6 @@ import FavouritesButton from "../Favourites/FavouritesButton";
 import {
   Root,
   ButtonWrapper,
-
   Caption,
   ImageInfo,
   FlowingText,
@@ -23,7 +22,7 @@ function ArtPiecesPreview({
   width,
   height,
   image,
-  isInFocus = false,
+  artPieceInFocus,
   artPieceInfo,
   onToggleFavourite,
   onSetArtPieceInFocus,
@@ -31,9 +30,17 @@ function ArtPiecesPreview({
   const viewWidth = useWindowSize().width * 0.2;
   const aspectRatio = width / height;
   const actualHeight = viewWidth / aspectRatio;
+  const isInFocus = artPieceInFocus?.slug === slug;
+  console.log(
+    artPieceInFocus,
+    artPieceInFocus?.slug,
+    slug,
+    artPieceInFocus?.slug === slug,
+    isInFocus
+  );
 
   return (
-    <Root data-slug={slug}>
+    <Root data-slug={slug} isInFocus={isInFocus}>
       <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
       <ButtonWrapper>
         <FavouritesButton
