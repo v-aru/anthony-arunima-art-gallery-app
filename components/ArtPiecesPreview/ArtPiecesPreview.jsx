@@ -42,6 +42,7 @@ function ArtPiecesPreview({
   );
   const currentArtPiece = artPieceInfo?.find((piece) => piece.slug === slug);
 
+
   return (
     <Root data-slug={slug} isInFocus={isInFocus}>
       <Image src={image} alt={title} width={viewWidth} height={actualHeight} />

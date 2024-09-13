@@ -12,6 +12,8 @@ export default function Spotlight({
   colors,
   width,
   height,
+  genre,
+  year,
   slug
 }) {
   const [movement, setMovement] = useState(0);
@@ -47,7 +49,7 @@ export default function Spotlight({
           artistName={artist}
           title={title}
           image={image}
-          onToggleFavourite={(slug) => toggleFavourite(slug, artist, title, image, {width, height})}
+          onToggleFavourite={(slug) => toggleFavourite(slug, artist, title, image, {width, height}, genre, year)}
           isFavourite={isFavourite}
         />
         <Image

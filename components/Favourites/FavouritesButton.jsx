@@ -9,6 +9,7 @@ const Button = styled.button`
     right: 10px;
     top: 10px;
     cursor: pointer;
+    color: red;
 
     svg {
         display: block;
@@ -24,14 +25,14 @@ const SVGWrapper = styled.span`
     object-fit: contain;
 `;
 
-const FavouritesButton = ({ slug, artistName, title, imageSource, dimensions, isFavourite, onToggleFavourite}) => {
+const FavouritesButton = ({ slug, artistName, title, imageSource, dimensions, genre, year, isFavourite, onToggleFavourite}) => {
 
     // const { isFavourite } = artPieceInfo?.find((piece) => piece.slug === slug) ?? { 
     //     isFavourite: false
     // };
 
     return (
-        <Button type="button" onClick={() => onToggleFavourite(slug, artistName, title, imageSource, dimensions)} isFavourite={isFavourite} >
+        <Button type="button" onClick={() => onToggleFavourite(slug, artistName, title, imageSource, dimensions, genre, year)} isFavourite={isFavourite} >
             <SVGWrapper>
                 <svg
                     stroke="currentColor"

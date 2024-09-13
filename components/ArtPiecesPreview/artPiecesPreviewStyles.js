@@ -39,7 +39,7 @@ export const Caption = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
-  color: #ccc;
+  color: #6689A1;
 `;
 export const ImageInfo = styled.div`
   width: 100%;
@@ -48,9 +48,9 @@ export const ImageInfo = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  color: #ccc;
+  color: #6689A1;
   background-color: #33343380;
-  border: 1px solid #ccc;
+  border: 1px solid #6689A1;
   padding: 15px;
   margin-top: 10px;
   font-family: sans-serif;
