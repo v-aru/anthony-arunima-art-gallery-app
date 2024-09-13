@@ -32,6 +32,7 @@ export default function SketchWrapper({ containerRef, textToWrite }) {
     handleUserActivity,
     setIsUserActive
   );
+
   return (
     <>
       <div
