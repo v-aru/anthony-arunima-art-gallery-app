@@ -23,8 +23,12 @@ export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
   const handleSetArtPieceInFocus = (slug) => {
-    const artPiece = data.find((piece) => piece.slug === slug);
-    setArtPieceInFocus(artPiece);
+    if (slug === artPieceInFocus?.slug) {
+      setArtPieceInFocus(null);
+    } else {
+      const artPiece = data.find((piece) => piece.slug === slug);
+      setArtPieceInFocus(artPiece);
+    }
   };
   useEffect(() => {
     if (!isLoading && !error) {
