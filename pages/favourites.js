@@ -4,12 +4,23 @@ import Title from '@/components/Title/Title';
 import { useFavourites } from '../components/Favourites/FavouritesContext.js'
 
 
-const Root = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  overflow: auto;
+  min-height: 100vh;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 1rem;
+  justify-content: center;
 `;
 
 const Message = styled.p`
@@ -23,10 +34,10 @@ const FavouritesPage = () => {
   if (favourites.length === 0) {
     return (
         <>
-        <Title content={"F A V O U R I T E S"} />
-        <Root>        
+        <Title content={"F A V O U R I T E S"} />  
+        <Container>
             <Message>No favourites yet</Message>
-        </Root>
+        </Container>
         </>
     );
   }
@@ -35,7 +46,8 @@ const FavouritesPage = () => {
   return (
     <>
         <Title content={"F A V O U R I T E S"} />
-        <Root>
+        <Container>        
+          <Content>
             {favourites.map( piece => {
               const dimensions = { width: piece.width, height: piece.height };
                 return (
@@ -56,7 +68,8 @@ const FavouritesPage = () => {
                   />
                 );
             })}
-        </Root>
+          </Content>
+        </Container>
     </>
   );
 }

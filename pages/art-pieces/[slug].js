@@ -3,6 +3,7 @@ import CommentsList from "@/components/CommentsList/CommentsList";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
+import { useFavourites } from "@/components/Favourites/FavouritesContext";
 
 export default function ArtPiecePage({
   artPieceInFocus,
@@ -22,6 +23,8 @@ export default function ArtPiecePage({
 
   const { slug, name, artist, year, genre, dimensions, imageSource } =
     artPieceInFocus;
+
+    const { favourites, toggleFavourite } = useFavourites();
     
   const Root = styled.section`
     width: 100%;
@@ -49,6 +52,8 @@ export default function ArtPiecePage({
     justify-content: flex-start;
     align-items: center;
   `;
+
+  const isFavourite = favourites.some(fav => fav.slug === slug);
   return (
     <Root colors={artPieceInFocus.colors}>
       <ArtPiecesPreview
@@ -62,8 +67,9 @@ export default function ArtPiecePage({
         width={dimensions.width}
         height={dimensions.height}
         isInFocus={true}
-        artPieceInfo={artPieceInfo}
-        onToggleFavourite={onToggleFavourite}
+        artPieceInfo={favourites}
+        onToggleFavourite={toggleFavourite}
+        isFavourite={isFavourite}
       />
       <CommentsWrapper>
         <CommentsList artPieceInFocus={artPieceInFocus} />

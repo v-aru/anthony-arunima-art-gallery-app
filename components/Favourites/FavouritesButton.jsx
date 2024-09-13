@@ -8,12 +8,13 @@ const Button = styled.button`
     position: absolute;
     right: 10px;
     top: 10px;
+    cursor: pointer;
 
     svg {
         display: block;
         height: 1.5rem;
         width: 1.5rem;
-        color: ${({ isFavourite }) => (isFavourite ? 'red' : 'black')};
+        color: red;
         object-fit: contain;
     }
 `;

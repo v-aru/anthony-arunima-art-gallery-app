@@ -60,7 +60,6 @@ export default function Spotlight({
           }}
         />
       </Piece>
-      <Artist>{artist}</Artist>
     </Root>
   );
 }
