@@ -50,24 +50,33 @@ export default function SpotlightPage({ data }) {
           textToWrite={"Brush'n'Byte, Berlin"}
         />{" "}
       </div>{" "}
-      <Spotlight
-        slug={randomPiece.slug}
-        image={randomPiece.imageSource}
-        colors={randomPiece.colors}
-        artist={randomPiece.artist}
-        width={randomPiece.dimensions.width}
-        height={randomPiece.dimensions.height}
-        artPieceInfo={favourites}
-        onToggleFavourite={() =>
-          toggleFavourite(
-            randomPiece.slug,
-            randomPiece.artist,
-            randomPiece.title,
-            randomPiece.imageSource,
-            randomPiece.dimensions
-          )
-        }
-      />
+      {/* <Title content={"ART GALLERY - SPOTLIGHT"} /> */}
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexFlow: "column nowrap",
+          // flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          color: "#888",
+        }}
+      >
+        {" "}
+        <Spotlight
+          slug={randomPiece.slug}
+          genre={randomPiece.genre}
+          year={randomPiece.year}
+          image={randomPiece.imageSource}
+          colors={randomPiece.colors}
+          artist={randomPiece.artist}
+          width={randomPiece.dimensions.width}
+          height={randomPiece.dimensions.height}
+          artPieceInfo={favourites}
+          onToggleFavourite={() => toggleFavourite(randomPiece.slug, randomPiece.artist, randomPiece.title, randomPiece.imageSource, randomPiece.dimensions, randomPiece.genre, randomPiece.year)}
+        />
+      </div>{" "}
     </Root>
   );
 }

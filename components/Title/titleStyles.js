@@ -5,7 +5,12 @@ export const StyledTitle = styled.h1`
   position: sticky;
   top: 0;
   text-align: center;
+  letter-spacing: 0.1rem;
   padding: 2rem;
-  color: #888;
-  background-color: #33343380;
+  color: #F6E8EA;
+  background-color: #2A324B;
+`;
+
+export const Line = styled.div`
+  display: block;
 `;

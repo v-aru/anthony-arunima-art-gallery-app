@@ -11,7 +11,7 @@ function ArtPiecesPage({
 }) {
   return (
     <>
-      <Title content={"A R T   G A L L E R Y"} />
+      <Title line1="B R U S H &nbsp; 'N' &nbsp; B Y T E " line2="G A L L E R Y" />
       <Carousell pieces={data} onSetArtPieceInFocus={onSetArtPieceInFocus} />
 
       <ArtPieces

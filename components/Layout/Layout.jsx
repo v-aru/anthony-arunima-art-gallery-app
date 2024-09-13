@@ -10,7 +10,7 @@ const Root = styled.div`
 
 const Body = styled.main`
   flex: 1;
-  overflow: hidden;
+  overflow: auto;
 `;
 
 export default function Layout({ children }) {
