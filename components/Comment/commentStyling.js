@@ -3,25 +3,35 @@ import styled from "styled-components";
 export const StyledCommentWrapper = styled.li`
   width: 100%;
   height: fit-content;
+  ${
+    "" /* max-width: 100%;
+  max-height: 100%; */
+  }
+  ${"" /* aspect-ratio: 3 / 4; */}
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: flex-start;
-  color: white;
   padding: 0.5rem;
-  border-radius: 8px;
-  background-color: #333;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.4),
-    0px 6px 10px 0px rgba(0, 0, 0, 0.3), 0px 1px 18px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s ease;
+  ${"" /* overflow: hidden; */}
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
 `;
 export const StyledAvatar = styled.span`
-  width: 1.9rem;
-  height: 1.8rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border: 2px solid transparent;
   border-radius: 50%;
-  margin: 1rem 0rem 0 0;
+  margin: 2rem 0rem 0 0;
   &:hover {
-    border: 2px solid white;
+    border: 2px solid #333;
     transition: border 0.3s ease; // Smooth transition
   }
 `;
@@ -29,10 +39,10 @@ export const StyledCommentHeader = styled.h6`
   width: 100%;
   height: fit-content;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
-  color: white;
+  color: black;
   padding: 0;
   margin: 0;
 `;
@@ -50,22 +60,23 @@ export const StyledCommentMenu = styled.div`
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  color: white;
+  color: black;
   padding: 0;
   margin: 0;
   gap: 0.5rem;
 `;
 export const SVGWrapper = styled.svg`
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2rem;
+  height: 2rem;
   font-size: 2rem;
   border-radius: 50%;
   padding: 0.2rem;
   object-fit: contain;
   &:hover {
-    background-color: #555;
+    background-color: #ccc;
   }
   &:hover path {
+    stroke: red;
     stroke-width: 3; // Thicker stroke on hover
     transition: stroke-width 0.3s ease; // Smooth transition
   }
@@ -74,7 +85,7 @@ export const StyledCommentParagraph = styled.p`
   width: 100%;
   height: fit-content;
   display: flex;
-  flex-flow: row nowrap;
+  ${"" /* flex-flow: row nowrap; */}
   justify-content: ${(props) => {
     switch (props.flex) {
       case "center":
@@ -86,11 +97,11 @@ export const StyledCommentParagraph = styled.p`
     }
   }};
   align-items: flex-start;
-  color: white;
+  color: black;
   padding: ${(props) => {
     switch (props.variant) {
       case "large":
-        return "1rem 0";
+        return "0rem 0 0 0";
       case "small":
         return 0;
       default:

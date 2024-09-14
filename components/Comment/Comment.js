@@ -14,6 +14,18 @@ import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
 export default function Comment({ commentObj }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const maxChars = 90; // Adjust this value as needed
+  const [avatarUrl, setAvatarUrl] = useState("");
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const displayedComment = isExpanded
+    ? commentObj.comment
+    : `${commentObj.comment.slice(0, maxChars).trim()} ...`;
+
   const apiSeed = [
     "Mia",
     "Harley",
@@ -26,8 +38,6 @@ export default function Comment({ commentObj }) {
     "Coco",
     "Bailey",
   ];
-
-  const [avatarUrl, setAvatarUrl] = useState("");
 
   useEffect(() => {
     const generateRandomAvatar = () => {
@@ -46,8 +56,8 @@ export default function Comment({ commentObj }) {
           src={avatarUrl}
           alt={"apiSeed"}
           style={{
-            // width: "2rem",
-            // height: "2rem",
+            width: "2rem",
+            height: "2rem",
             // display: "flex",
             // justifyContent: "center",
             // alignItems: "center",
@@ -61,14 +71,22 @@ export default function Comment({ commentObj }) {
       </StyledAvatar>
       <StyledCommentBody>
         <StyledCommentHeader>
-          <StyledCommentParagraph variant="large">
-            {commentObj.userName}
-          </StyledCommentParagraph>
           <StyledCommentParagraph variant="small" flex="end">
             {dayjs(commentObj.createdAtDateTime).fromNow()}
           </StyledCommentParagraph>
+          <StyledCommentParagraph variant="large">
+            {commentObj.userName}
+          </StyledCommentParagraph>
         </StyledCommentHeader>
-        <StyledCommentParagraph>{commentObj.comment}</StyledCommentParagraph>
+        <StyledCommentParagraph>{displayedComment}</StyledCommentParagraph>{" "}
+        {commentObj.comment.length > maxChars && (
+          <span
+            onClick={toggleExpand}
+            style={{ cursor: "pointer", color: " #2a324b" }}
+          >
+            {isExpanded ? "Read Less" : "Read More"}
+          </span>
+        )}
         <StyledCommentMenu>
           <SVGWrapper
             stroke="currentColor"
