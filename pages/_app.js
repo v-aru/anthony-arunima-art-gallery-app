@@ -4,6 +4,9 @@ import Layout from "@/components/Layout/Layout";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { FavouritesProvider } from "../components/Favourites/FavouritesContext.js";
+import { CommentsProvider } from "../components/CommentsList/CommentsContext";
+
+import "../globalStyles.css"; // Adjust the path if needed
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -48,14 +51,16 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <SWRConfig value={{ fetcher }}>
         <FavouritesProvider>
-          <Layout>
-            <Component
-              {...pageProps}
-              data={data}
-              artPieceInFocus={artPieceInFocus}
-              onSetArtPieceInFocus={handleSetArtPieceInFocus}
-            />
-          </Layout>
+          <CommentsProvider>
+            <Layout>
+              <Component
+                {...pageProps}
+                data={data}
+                artPieceInFocus={artPieceInFocus}
+                onSetArtPieceInFocus={handleSetArtPieceInFocus}
+              />
+            </Layout>
+          </CommentsProvider>
         </FavouritesProvider>
       </SWRConfig>
     </>
