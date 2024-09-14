@@ -6,8 +6,8 @@ export const StyledCommentsList = styled.ul`
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  background-color: #444;
+  background-color: transparent;
   overflow: scroll;
-  padding: 0 3rem;
+  padding: 1rem;
   gap: 1rem;
 `;

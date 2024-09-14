@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { StyledCommentsList } from "./commentsListStyling";
 import { mockCommentsArray } from "./mockCommentsArray";
 import Comment from "../Comment/Comment";
+import CommentsContext from "./CommentsContext";
 
 export default function CommentsList({ artPieceInFocus }) {
-  const [filteredCommentsBySlug, setFilteredCommentsBySlug] =
-    useState(mockCommentsArray);
+  const { comments, filteredCommentsBySlug, setFilteredCommentsBySlug } =
+    useContext(CommentsContext);
 
   useEffect(() => {
     setFilteredCommentsBySlug(
@@ -13,7 +14,7 @@ export default function CommentsList({ artPieceInFocus }) {
         (comment) => comment.slug === artPieceInFocus.slug
       )
     );
-  }, [artPieceInFocus]);
+  }, [comments, artPieceInFocus]);
 
   return (
     <StyledCommentsList>
