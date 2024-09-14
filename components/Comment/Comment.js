@@ -6,7 +6,7 @@ import {
   StyledCommentMenu,
   StyledAvatar,
   SVGWrapper,
-  StyledCommentParagraph,
+  StyledParagraph,
 } from "./commentStyling";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -71,21 +71,24 @@ export default function Comment({ commentObj }) {
       </StyledAvatar>
       <StyledCommentBody>
         <StyledCommentHeader>
-          <StyledCommentParagraph variant="small" flex="end">
+          <StyledParagraph variant="small" flex="end">
             {dayjs(commentObj.createdAtDateTime).fromNow()}
-          </StyledCommentParagraph>
-          <StyledCommentParagraph variant="large">
+          </StyledParagraph>
+          <StyledParagraph variant="large" function="link">
             {commentObj.userName}
-          </StyledCommentParagraph>
+          </StyledParagraph>
         </StyledCommentHeader>
-        <StyledCommentParagraph>{displayedComment}</StyledCommentParagraph>{" "}
+        <StyledParagraph>{displayedComment}</StyledParagraph>{" "}
         {commentObj.comment.length > maxChars && (
-          <span
+          <StyledParagraph
+            variant="small"
+            function="link"
+            flex="start"
             onClick={toggleExpand}
             style={{ cursor: "pointer", color: " #2a324b" }}
           >
             {isExpanded ? "Read Less" : "Read More"}
-          </span>
+          </StyledParagraph>
         )}
         <StyledCommentMenu>
           <SVGWrapper
@@ -96,10 +99,8 @@ export default function Comment({ commentObj }) {
           >
             <path d="m12 21.35-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z" />
           </SVGWrapper>
-          <StyledCommentParagraph variant="">
-            {commentObj.likes}
-          </StyledCommentParagraph>
-        </StyledCommentMenu>
+          <StyledParagraph variant="">{commentObj.likes}</StyledParagraph>{" "}
+        </StyledCommentMenu>{" "}
       </StyledCommentBody>
     </StyledCommentWrapper>
   );
