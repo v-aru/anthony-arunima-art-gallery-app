@@ -12,7 +12,7 @@ import {
   ColorCirclesWrapper,
   Circle,
   CardContainer,
-  ImageWrapper
+  ImageWrapper,
 } from "./artPiecesPreviewStyles";
 
 function ArtPiecesPreview({
@@ -38,23 +38,27 @@ function ArtPiecesPreview({
   const currentArtPiece = artPieceInfo?.find((piece) => piece.slug === slug);
 
   return (
-    <Root data-slug={slug} isInFocus={isInFocus}>
+    <Root data-slug={slug} isinfocus={isInFocus}>
       <CardContainer key={slug}>
         <ImageWrapper>
-          <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
-          </ImageWrapper>
-          <ButtonWrapper>
-            <FavouritesButton
-              slug={slug}
-              artist={artist}
-              title={title}
-              image={image}
-              artPieceInfo={artPieceInfo}
-              onToggleFavourite={onToggleFavourite}
-              isFavourite={isFavourite}
-            />
-          </ButtonWrapper>
-        {/* </ImageWrapper> */}
+          <Image
+            src={image}
+            alt={title}
+            width={viewWidth}
+            height={actualHeight}
+          />
+        </ImageWrapper>
+        <ButtonWrapper>
+          <FavouritesButton
+            slug={slug}
+            artist={artist}
+            title={title}
+            image={image}
+            artPieceInfo={artPieceInfo}
+            onToggleFavourite={onToggleFavourite}
+            isFavourite={isFavourite}
+          />
+        </ButtonWrapper>
         {!isInFocus ? (
           <>
             <Caption>
