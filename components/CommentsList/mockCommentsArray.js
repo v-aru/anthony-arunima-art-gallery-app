@@ -2,6 +2,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9), // Generate a random id
     slug: "orange-red-and-green",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The bold colors in this abstract piece evoke a sense of energy and movement. I love how the orange and red play off each other.",
     userId: "user123",
@@ -11,6 +12,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "blue-and-red",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This minimalist piece is striking in its simplicity. The contrast between the blue and red is powerful.",
     userId: "ColorCapture",
@@ -20,6 +22,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "clay-bust-sculptures",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The expressiveness captured in these clay busts is remarkable. You can almost feel the emotions emanating from them.",
     userId: "sculptureFan456",
@@ -29,6 +32,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "bread-and-fruits",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This flatlay is a feast for the eyes! The arrangement of the bread and fruits is so aesthetically pleasing.",
     userId: "foodie789",
@@ -38,6 +42,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The timeless beauty of this Greek sculpture is awe-inspiring. It's a reminder of the incredible artistry of the past.",
     userId: "natureLover101",
@@ -47,6 +52,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "orange-red-and-green",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The vibrant orange and red hues in this painting create a dynamic and energetic composition. I love how they contrast with the cooler greens.",
     userId: "user456",
@@ -56,6 +62,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "orange-red-and-green",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The subtle touches of green add a sense of balance to this otherwise fiery piece. It's a beautiful interplay of warm and cool tones.",
     userId: "user789",
@@ -65,6 +72,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "orange-red-and-green",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This abstract work reminds me of a vibrant sunset. The colors are so rich and evocative.",
     userId: "PixelPeeker",
@@ -74,6 +82,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "orange-red-and-green",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I'm fascinated by the way the artist has used texture in this piece. It adds another layer of depth to the colors.",
     userId: "user202",
@@ -83,6 +92,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "blue-and-red",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The contrast between the vibrant blue and the fiery red in this piece is simply captivating. It evokes a sense of energy and passion.",
     userId: "user987",
@@ -92,6 +102,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "blue-and-red",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The way the blue and red intertwine and blend in this abstract painting creates a sense of depth and mystery. It's a truly mesmerizing work.",
     userId: "user654",
@@ -101,6 +112,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "blue-and-red",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The simplicity of this composition, with its focus on just two primary colors, is incredibly powerful. It speaks volumes without needing any additional elements.",
     userId: "user321",
@@ -110,6 +122,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "clay-bust-sculptures",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The level of detail captured in these clay busts is truly remarkable. The artist's skill in conveying emotion through the subtle nuances of the clay is awe-inspiring.",
     userId: "sculptorFan123",
@@ -119,6 +132,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "clay-bust-sculptures",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The earthy tones of the clay perfectly complement the timeless beauty of these sculptures. They evoke a sense of history and connection to the past.",
     userId: "historyBuff456",
@@ -128,6 +142,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "clay-bust-sculptures",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "These clay busts are a testament to the enduring power of classical art. They remind us of the beauty and complexity of the human form.",
     userId: "artEnthusiast789",
@@ -137,6 +152,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "clay-bust-sculptures",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I love how these sculptures capture the unique personalities of their subjects. You can almost feel their presence through the clay.",
     userId: "portraitLover101",
@@ -146,6 +162,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "bread-and-fruits",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This flatlay is a feast for the eyes! The arrangement of the bread and fruits is so aesthetically pleasing, and the colors are just gorgeous.",
     userId: "foodie123",
@@ -155,6 +172,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "bread-and-fruits",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The textures in this photo are incredible! You can almost feel the crustiness of the bread and the juiciness of the fruits.",
     userId: "photographer456",
@@ -164,6 +182,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "bread-and-fruits",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This photo makes me want to reach into the screen and grab a piece of that bread! It looks so fresh and delicious.",
     userId: "breadLover789",
@@ -173,6 +192,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "bread-and-fruits",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The composition of this shot is perfect. The way the fruits are scattered around the bread creates a sense of abundance and invites you to explore the image.",
     userId: "artCritic101",
@@ -182,6 +202,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "bread-and-fruits",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This photo is a beautiful reminder of the simple pleasures in life. A warm loaf of bread and fresh fruits – what could be better?",
     userId: "minimalist202",
@@ -191,6 +212,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "bread-and-fruits",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I love the rustic feel of this photo. It makes me think of a cozy breakfast on a sunny morning.",
     userId: "PixelPeeker",
@@ -200,6 +222,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "kiwi-juice-on-glass",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The vibrant green of the kiwi juice is so refreshing! This close-up shot makes me crave a glass right now.",
     userId: "juiceLover123",
@@ -209,6 +232,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "kiwi-juice-on-glass",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The way the light catches the tiny bubbles in the juice is mesmerizing. This photo captures the essence of freshness.",
     userId: "photographyEnthusiast456",
@@ -218,6 +242,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "kiwi-juice-on-glass",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The contrast between the bright green juice and the neutral background makes the colors pop even more. Beautiful work!",
     userId: "artLover789",
@@ -227,6 +252,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "kiwi-juice-on-glass",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This photo is so crisp and clear, I can almost taste the tangy sweetness of the kiwi. It's making my mouth water!",
     userId: "foodie101",
@@ -236,6 +262,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "kiwi-juice-on-glass",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The simplicity of this image is what makes it so striking. It's a beautiful celebration of the natural beauty of fruits.",
     userId: "minimalist202",
@@ -245,6 +272,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "kiwi-juice-on-glass",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The subtle hints of yellow and brown in the kiwi seeds add depth and visual interest to this close-up. Great attention to detail!",
     userId: "foodie789",
@@ -254,6 +282,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "man-digital-illustration",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This piece is both unsettling and intriguing. The figure's unusual position and the distorted perspective create a sense of unease and wonder.",
     userId: "artLover123",
@@ -263,6 +292,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "man-digital-illustration",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The use of muted colors adds to the somber atmosphere of the installation. It feels like a commentary on the human condition.",
     userId: "ThirstyThursday",
@@ -272,6 +302,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "man-digital-illustration",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The way the figure is attached to the wall makes me think about themes of confinement and restriction. It's a powerful image.",
     userId: "philosophyStudent789",
@@ -281,6 +312,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "man-digital-illustration",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I love how this artwork plays with perspective. It challenges our perception of reality and makes us question what we see.",
     userId: "artEnthusiast101",
@@ -290,6 +322,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "man-digital-illustration",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The digital illustration technique used here is impressive. The details are so sharp and realistic, it almost looks like a photograph.",
     userId: "digitalArtist202",
@@ -299,6 +332,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "silhouette-of-trees",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The contrast between the dark branches and the bright sky is striking. It creates a sense of drama and mystery.",
     userId: "natureLover123",
@@ -308,6 +342,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "silhouette-of-trees",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The intricate details of the branches are beautifully captured in this silhouette. It's like a delicate drawing against the canvas of the sky.",
     userId: "photographyEnthusiast456",
@@ -317,6 +352,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "silhouette-of-trees",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This photo evokes a sense of peace and tranquility. I can almost feel the stillness of the forest.",
     userId: "zenMaster789",
@@ -326,6 +362,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "silhouette-of-trees",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The perspective from below, looking up at the branches, is unique and interesting. It makes me feel small and insignificant in the grand scheme of nature.",
     userId: "natureLover101",
@@ -335,6 +372,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "silhouette-of-trees",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The starkness of the black and white image really emphasizes the shapes and forms of the trees. It's a beautiful example of minimalist photography.",
     userId: "artAppreciator202",
@@ -344,6 +382,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This photo is absolutely breathtaking! The way it captures both the underwater and above-water worlds is incredible. The whale looks so majestic.",
     userId: "oceanLover123",
@@ -353,6 +392,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The colors in this photo are so vibrant! The deep blues of the ocean and the bright sky create a stunning contrast.",
     userId: "photographyEnthusiast456",
@@ -362,6 +402,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This image perfectly captures the immense size and power of these gentle giants. It's a humbling reminder of the wonders of the natural world.",
     userId: "natureLover789",
@@ -371,6 +412,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The split-shot technique used here is so creative! It gives us a unique perspective on the whale's world, both above and below the surface.",
     userId: "photographyStudent101",
@@ -380,6 +422,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I can't get over how peaceful this photo is. The whale seems to be gliding effortlessly through the water, and the colors are so calming.",
     userId: "oceanDreamer202",
@@ -389,6 +432,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This photo reminds me of how important it is to protect our oceans and the amazing creatures that call them home.",
     userId: "conservationist303",
@@ -398,6 +442,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The details in this shot are incredible! You can see the texture of the whale's skin and the ripples on the water's surface.",
     userId: "detailOriented404",
@@ -407,6 +452,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "split-shot-of-whale",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I love how this image captures the vastness of the ocean. It makes me feel so small and insignificant in comparison to this magnificent creature.",
     userId: "wanderlust505",
@@ -416,6 +462,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The timeless beauty of this Greek sculpture is awe-inspiring. It's a reminder of the incredible artistry of the past.",
     userId: "historyBuff202", // Reusing this user from a previous comment
@@ -425,6 +472,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The level of detail and craftsmanship in this sculpture is astounding. It's a testament to the skill and dedication of the artist.",
     userId: "artCollector101", // Reusing this user
@@ -434,6 +482,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The serene expression on the statue's face is captivating. It conveys a sense of peace and wisdom that transcends time.",
     userId: "artEnthusiast789", // Reusing this user
@@ -443,6 +492,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The way the light plays off the curves of the marble is simply mesmerizing. It adds a sense of life and movement to the sculpture.",
     userId: "sculptorFan123", // Reusing this user
@@ -452,6 +502,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The muted tones of the marble give this sculpture a sense of antiquity and gravitas. It's like a window into the past.",
     userId: "historyBuff456", // Reusing this user
@@ -461,6 +512,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This sculpture is a masterpiece of balance and proportion. The human form is idealized in a way that is both beautiful and inspiring.",
     userId: "newuser888",
@@ -470,6 +522,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I'm struck by the sense of dignity and grace conveyed by this sculpture. It's a powerful reminder of the enduring legacy of Greek art.",
     userId: "newuser999",
@@ -479,6 +532,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "majestic-greek-sculpture",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The drapery on this sculpture is so lifelike, it almost seems to flutter in the breeze. The artist's attention to detail is incredible.",
     userId: "newuser555",
@@ -488,6 +542,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The serene expression on this woman's face is captivating. It conveys a sense of peace and inner strength.",
     userId: "artEnthusiast789", // Reusing this user
@@ -497,6 +552,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The details in this sculpture are incredible. You can see the delicate folds of her dress and the intricate details of her hair.",
     userId: "detailOriented303", // Reusing this user
@@ -506,6 +562,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This statue is a beautiful representation of feminine grace and elegance. It's a timeless piece that will always be admired.",
     userId: "historyBuff456", // Reusing this user
@@ -515,6 +572,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The use of light and shadow in this sculpture is masterful. It creates a sense of depth and dimension that brings the statue to life.",
     userId: "photographyEnthusiast456", // Reusing this user
@@ -524,6 +582,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "I'm drawn to the quiet strength and dignity portrayed in this sculpture. It's a reminder of the power and resilience of women throughout history.",
     userId: "newuser111",
@@ -533,6 +592,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The monochromatic palette of this sculpture adds to its timeless appeal. It focuses the viewer's attention on the form and expression of the woman.",
     userId: "newuser222",
@@ -542,6 +602,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "This statue evokes a sense of mystery and intrigue. I wonder what she's thinking and what her story is.",
     userId: "newuser333",
@@ -551,6 +612,7 @@ export const mockCommentsArray = [
   {
     id: Math.random().toString(36).substring(2, 9),
     slug: "woman-statue",
+    likes: Math.floor(Math.random() * 12),
     comment:
       "The pose of the woman is both graceful and powerful. It's a beautiful representation of the feminine form.",
     userId: "artLover789", // Reusing this user

@@ -46,8 +46,8 @@ export default function SketchWrapper({ containerRef, textToWrite }) {
             width={width}
             height={height}
             textToWrite={textToWrite}
-            mainObjColor={"#333333"}
-            backgroundColor={"#333333"}
+            mainObjColor={" #f6e8ea"}
+            backgroundColor={"#2a324b"}
           />
         )}
       </div>
