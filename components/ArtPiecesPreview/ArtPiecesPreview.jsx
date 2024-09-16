@@ -13,7 +13,7 @@ import {
   Circle,
   CardContainer,
   ImageWrapper
-} from "./artPiecesPreviewStyles";
+} from "./artPiecesPreviewStyles.js";
 
 function ArtPiecesPreview({
   slug,
