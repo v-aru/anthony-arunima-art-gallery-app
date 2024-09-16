@@ -15,6 +15,9 @@ import {
   StyledParagraph,
 } from "./commentStyling";
 
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
 dayjs.extend(relativeTime);
 
 export default function Comment({ commentObj }) {
@@ -35,6 +38,7 @@ export default function Comment({ commentObj }) {
   useEffect(() => {
     generateRandomAvatar(setAvatarUrl);
   }, []);
+
 
   return (
     <StyledCommentWrapper>
