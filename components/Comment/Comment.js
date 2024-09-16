@@ -15,6 +15,11 @@ import {
   StyledParagraph,
 } from "./commentStyling";
 
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+// import Image from "next/image";
+
+
 dayjs.extend(relativeTime);
 
 export default function Comment({ commentObj }) {
@@ -28,6 +33,7 @@ export default function Comment({ commentObj }) {
     setIsExpanded(!isExpanded);
   };
 
+
   const displayedCommentText = isExpanded
     ? commentObj?.comment
     : `${commentObj?.comment.slice(0, maxChars).trim()} ...`;
@@ -35,6 +41,7 @@ export default function Comment({ commentObj }) {
   useEffect(() => {
     generateRandomAvatar(setAvatarUrl);
   }, []);
+
 
   return (
     <StyledCommentWrapper>

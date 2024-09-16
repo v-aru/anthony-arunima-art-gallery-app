@@ -46,6 +46,7 @@ export const ImageInfo = styled.div`
   color: #6689a1;
   background-color: #33343380;
   border: 1px solid #6689a1;
+
   padding: 15px;
   margin-top: 10px;
   font-family: sans-serif;
@@ -73,7 +74,7 @@ export const LinkWrapper = styled.div`
   }
   & > * {
     color: white;
-    background-color: #33343380;
+    background-color: #D4D5D1;
     padding: 1rem;
     overflow-wrap: break-word;
   }
