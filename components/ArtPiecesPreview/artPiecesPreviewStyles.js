@@ -33,6 +33,7 @@ export const Caption = styled.div`
   align-items: center;
   padding: 1rem;
   color: #6689a1;
+
 `;
 export const ImageInfo = styled.div`
   width: 100%;

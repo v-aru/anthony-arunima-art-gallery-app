@@ -12,7 +12,7 @@ import {
   ColorCirclesWrapper,
   Circle,
   CardContainer,
-  ImageWrapper,
+  ImageWrapper
 } from "./artPiecesPreviewStyles";
 
 function ArtPiecesPreview({
@@ -59,6 +59,7 @@ function ArtPiecesPreview({
             isFavourite={isFavourite}
           />
         </ButtonWrapper>
+
         {!isInFocus ? (
           <>
             <Caption>
