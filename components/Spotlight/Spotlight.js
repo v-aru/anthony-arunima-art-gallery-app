@@ -1,6 +1,6 @@
 import Image from "next/image";
 import FavouritesButton from "../Favourites/FavouritesButton";
-import { Root, Piece } from "./spotlightStyles";
+import { Root, Piece, Artist } from "./spotlightStyles";
 import { useFavourites } from "../Favourites/FavouritesContext";
 import { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ export default function Spotlight({
       setMovement(mapRange(Math.sin(someAngle), -1, 1, 0, 1));
     }, 40);
     return () => clearInterval(intervalId);
-  }, [someAngle]);
+  }, []);
 
   return (
     <Root colors={colors} movement={movement}>
