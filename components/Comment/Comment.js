@@ -55,16 +55,12 @@ export default function Comment({ commentObj }) {
             {dayjs(commentObj?.createdAtDateTime).fromNow()}
           </StyledParagraph>
           <StyledParagraph variant="large" function="link">
-            {!userInFocus?.userId === commentObj.userId ? (
-              <Link
-                href={`/users/${commentObj?.userId}`}
-                onClick={() => handleSetUserInFocusId(commentObj?.userId)}
-              >
-                {commentObj?.userName}
-              </Link>
-            ) : (
-              commentObj?.userName
-            )}
+            <Link
+              href={`/users/${commentObj?.userId}`}
+              onClick={() => handleSetUserInFocusId(commentObj?.userId)}
+            >
+              {commentObj?.userName}
+            </Link>
           </StyledParagraph>
         </StyledCommentHeader>
         <StyledParagraph>{displayedCommentText}</StyledParagraph>{" "}

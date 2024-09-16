@@ -20,14 +20,6 @@ export default function UserPage({}) {
   const [filteredComments, setFilteredComments] = useState(null);
 
   const { favourites, toggleFavourite } = useFavourites();
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
-
-  if (!userInFocus) {
-    return <div>Art piece not found</div>;
-  }
   useEffect(() => {
     setFilteredComments(
       comments.filter((comment) => {
@@ -35,6 +27,14 @@ export default function UserPage({}) {
       })
     );
   }, [userInFocus]);
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  if (!userInFocus) {
+    return <div>Art piece not found</div>;
+  }
+
   return (
     <Root>
       <Title line1="B R U S H &nbsp; 'N' &nbsp; B Y T E " line2="U S E R S" />
