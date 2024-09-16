@@ -34,6 +34,7 @@ export const Caption = styled.div`
   padding: 1rem;
   color: #6689A1;
 `;
+
 export const ImageInfo = styled.div`
   width: 100%;
   display: flex;
@@ -49,10 +50,12 @@ export const ImageInfo = styled.div`
   margin-top: 10px;
   font-family: sans-serif;
 `;
+
 export const FlowingText = styled.p`
   margin: 0;
   padding: 0;
 `;
+
 export const LinkWrapper = styled.div`
   z-index: 10;
   width: 100%;

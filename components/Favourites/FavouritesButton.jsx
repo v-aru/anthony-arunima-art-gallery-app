@@ -36,9 +36,6 @@ const FavouritesButton = ({
   isFavourite,
   onToggleFavourite,
 }) => {
-  // const { isFavourite } = artPieceInfo?.find((piece) => piece.slug === slug) ?? {
-  //     isFavourite: false
-  // };
 
   return (
     <Button
