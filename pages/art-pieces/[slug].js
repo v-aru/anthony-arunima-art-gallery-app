@@ -20,13 +20,18 @@ export default function ArtPiecePage({
 }) {
   const router = useRouter();
 
-  const { filteredCommentsBySlug } = useContext(CommentsContext);
-
-  const [filteredComments, setFilteredComments] = useState(null);
+  const { filteredComments, setFilteredComments, filteredCommentsBySlug } =
+    useContext(CommentsContext);
 
   const [showFormAddComments, setShowFormAddComments] = useState(false);
   const { favourites, toggleFavourite } = useFavourites();
-
+  useEffect(() => {
+    setFilteredComments(
+      mockCommentsArray.filter(
+        (comment) => comment.slug === artPieceInFocus?.slug
+      )
+    );
+  }, [artPieceInFocus]);
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
@@ -43,13 +48,7 @@ export default function ArtPiecePage({
   const handleToggleShowFormAddComment = () => {
     setShowFormAddComments((prev) => !prev);
   };
-  useEffect(() => {
-    setFilteredComments(
-      mockCommentsArray.filter(
-        (comment) => comment.slug === artPieceInFocus.slug
-      )
-    );
-  }, [artPieceInFocus]);
+
   return (
     <Root colors={artPieceInFocus.colors}>
       <Title

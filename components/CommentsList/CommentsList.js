@@ -5,7 +5,6 @@ import Comment from "../Comment/Comment";
 import { StyledCommentsList } from "./commentsListStyling";
 
 export default function CommentsList({ filteredComments }) {
-  console.log("triggered userInFocus", filteredComments);
   return (
     <StyledCommentsList>
       {filteredComments

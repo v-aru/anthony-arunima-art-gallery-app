@@ -8,6 +8,7 @@ const CommentsContext = createContext();
 export const CommentsProvider = ({ children }) => {
   const { userInFocus } = useContext(UsersContext);
   const [comments, setComments] = useState(mockCommentsArray);
+  const [filteredComments, setFilteredComments] = useState(mockCommentsArray);
   const [filteredCommentsBySlug, setFilteredCommentsBySlug] =
     useState(mockCommentsArray);
   const [filteredCommentsByUserId, setFilteredCommentsByUserId] =
@@ -25,6 +26,8 @@ export const CommentsProvider = ({ children }) => {
       value={{
         comments,
         setComments,
+        filteredComments,
+        setFilteredComments,
         filteredCommentsBySlug,
         setFilteredCommentsBySlug,
         filteredCommentsByUserId,

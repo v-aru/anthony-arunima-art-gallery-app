@@ -55,7 +55,7 @@ export default function Comment({ commentObj }) {
             {dayjs(commentObj?.createdAtDateTime).fromNow()}
           </StyledParagraph>
           <StyledParagraph variant="large" function="link">
-            {!userInFocus.userId === commentObj.userId ? (
+            {!userInFocus?.userId === commentObj.userId ? (
               <Link
                 href={`/users/${commentObj?.userId}`}
                 onClick={() => handleSetUserInFocusId(commentObj?.userId)}

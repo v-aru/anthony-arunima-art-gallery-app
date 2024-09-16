@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useRef, useState } from "react";
 
 import {
@@ -12,12 +11,10 @@ import Menu from "../Menu/Menu";
 
 export default function FormAddComment() {
   const textAreaRef = useRef(null);
-  const { filteredCommentsBySlug, setFilteredCommentsBySlug } =
-    useContext(CommentsContext);
+  const { filteredComments, setFilteredComments } = useContext(CommentsContext);
   const [commentText, setCommentText] = useState(
     "I love how this image captures the vastness of the ocean. It makes me feel so small and insignificant in comparison to this magnificent creature."
   ); // State to control the TextArea's value
-
 
   useEffect(() => {
     if (textAreaRef.current) {
@@ -45,7 +42,7 @@ export default function FormAddComment() {
       createdAtDateTime: new Date().toISOString(),
     };
 
-    setFilteredCommentsBySlug((prevComments) => {
+    setFilteredComments((prevComments) => {
       if (prevComments) {
         return [...prevComments, newComment];
       } else {
@@ -58,7 +55,6 @@ export default function FormAddComment() {
 
   return (
     <StyledFormAddComment>
-
       <label className="input-sizer stacked">
         <TextArea
           ref={textAreaRef}
@@ -69,7 +65,7 @@ export default function FormAddComment() {
           onChange={handleInput} // Also handle onChange to update the state
         />
       </label>
-    
+      <button onClick={handleSubmit}>Post</button>
     </StyledFormAddComment>
   );
 }
