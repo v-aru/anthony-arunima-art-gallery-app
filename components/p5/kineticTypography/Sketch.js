@@ -35,9 +35,9 @@ export default function Sketch({
 
     p.draw = () => {
       p.clear();
-      p.background(255);
-      pg.background(255);
-      pg.fill(0);
+      p.background(backgroundColor);
+      pg.background(backgroundColor);
+      pg.fill(p.color(mainObjColor));
       pg.textFont(font);
       pg.textSize(60);
       pg.push();
@@ -73,7 +73,7 @@ export default function Sketch({
   useEffect(() => {
     let inst = new p5(Sketch, sketchRef.current);
     return () => inst.remove();
-  }, [width, height, textToWrite]);
+  }, [width, height, textToWrite, backgroundColor, mainObjColor]);
 
   return (
     <>
