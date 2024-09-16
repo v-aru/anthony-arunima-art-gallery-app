@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledCommentsList = styled.ul`
+export const StyledUsersList = styled.ul`
   width: 100%;
   max-width: 45ch;
   height: 100%;

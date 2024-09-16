@@ -32,7 +32,8 @@ export const Caption = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  color: #6689A1;
+  color: #6689a1;
+
 `;
 
 export const ImageInfo = styled.div`
@@ -43,9 +44,10 @@ export const ImageInfo = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  color: #6689A1;
-  background-color: #D4D5D1;
-  border: 1px solid #6689A1;
+  color: #6689a1;
+  background-color: #33343380;
+  border: 1px solid #6689a1;
+
   padding: 15px;
   margin-top: 10px;
   font-family: sans-serif;
@@ -122,10 +124,10 @@ export const ImageWrapper = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
-  align-items: center; 
-  overflow: hidden; 
-  position: relative; 
+  align-items: center;
+  overflow: hidden;
+  position: relative;
   img {
-    object-fit: cover; 
+    object-fit: cover;
   }
 `;

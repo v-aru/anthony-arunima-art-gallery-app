@@ -4,11 +4,15 @@ export const StyledTitle = styled.h1`
   z-index: 10;
   position: sticky;
   top: 0;
+  width: 100%;
   text-align: center;
   letter-spacing: 0.1rem;
-  padding: 2rem;
-  color: #F6E8EA;
-  background-color: #2A324B;
+  margin: 0;
+  padding: 1rem;
+  color: #f6e8ea;
+  background-color: #2a324b;
+  font-family: "Roboto-Thin-Italic";
+  font-weight: 100;
 `;
 
 export const Line = styled.div`
