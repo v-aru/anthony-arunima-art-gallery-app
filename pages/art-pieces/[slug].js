@@ -1,14 +1,17 @@
-import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
-import CommentsList from "@/components/CommentsList/CommentsList";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import styled from "styled-components";
+
 import { useFavourites } from "@/components/Favourites/FavouritesContext";
-import FormAddComment from "@/components/FormAddComment/FormAddComment";
-import { CommentsWrapper, Root, StyledBody, StyledMenu } from "./slugStyles";
-import Title from "@/components/Title/Title";
-import { useContext, useState } from "react";
+
+import ArtPiecesPreview from "@/components/ArtPiecesPreview/ArtPiecesPreview";
 import CommentsContext from "@/components/CommentsList/CommentsContext";
+import CommentsList from "@/components/CommentsList/CommentsList";
+import FormAddComment from "@/components/FormAddComment/FormAddComment";
 import Menu from "@/components/Menu/Menu";
+import Title from "@/components/Title/Title";
+
+import { CommentsWrapper, Root, StyledBody, StyledMenu } from "./slugStyles";
+import { mockCommentsArray } from "@/components/CommentsList/mockCommentsArray";
 
 export default function ArtPiecePage({
   artPieceInFocus,
@@ -16,7 +19,11 @@ export default function ArtPiecePage({
   onToggleFavourite,
 }) {
   const router = useRouter();
+
   const { filteredCommentsBySlug } = useContext(CommentsContext);
+
+  const [filteredComments, setFilteredComments] = useState(null);
+
   const [showFormAddComments, setShowFormAddComments] = useState(false);
   const { favourites, toggleFavourite } = useFavourites();
 
@@ -36,6 +43,13 @@ export default function ArtPiecePage({
   const handleToggleShowFormAddComment = () => {
     setShowFormAddComments((prev) => !prev);
   };
+  useEffect(() => {
+    setFilteredComments(
+      mockCommentsArray.filter(
+        (comment) => comment.slug === artPieceInFocus.slug
+      )
+    );
+  }, [artPieceInFocus]);
   return (
     <Root colors={artPieceInFocus.colors}>
       <Title
@@ -76,7 +90,7 @@ export default function ArtPiecePage({
           {showFormAddComments && <FormAddComment />}
         </div>
         <CommentsWrapper>
-          <CommentsList artPieceInFocus={artPieceInFocus} />
+          <CommentsList filteredComments={filteredComments} />
         </CommentsWrapper>
       </StyledBody>
     </Root>
