@@ -43,11 +43,12 @@ export default function SpotlightPage({ data }) {
         style={{
           width: "100%",
           height: "100px",
+          // margin: "1rem",
         }}
       >
         <SketchWrapper
           containerRef={containerRef}
-          textToWrite={"Brush'n'Byte, Berlin"}
+          textToWrite={"B R U S H  'N'   B Y T E "}
         />{" "}
       </div>{" "}
       {/* <Title content={"ART GALLERY - SPOTLIGHT"} /> */}
@@ -74,7 +75,17 @@ export default function SpotlightPage({ data }) {
           width={randomPiece.dimensions.width}
           height={randomPiece.dimensions.height}
           artPieceInfo={favourites}
-          onToggleFavourite={() => toggleFavourite(randomPiece.slug, randomPiece.artist, randomPiece.title, randomPiece.imageSource, randomPiece.dimensions, randomPiece.genre, randomPiece.year)}
+          onToggleFavourite={() =>
+            toggleFavourite(
+              randomPiece.slug,
+              randomPiece.artist,
+              randomPiece.title,
+              randomPiece.imageSource,
+              randomPiece.dimensions,
+              randomPiece.genre,
+              randomPiece.year
+            )
+          }
         />
       </div>{" "}
     </Root>

@@ -1,20 +1,9 @@
-import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import ArtPiecesPreview from "../ArtPiecesPreview/ArtPiecesPreview.jsx";
 import ScrollPositionIndicator from "../ScrollIndicator/ScrollPositionIndicator.js";
 import { useFavourites } from "../Favourites/FavouritesContext.js";
+import { Root } from './ArtPiecesStyles.js';
 
-const Root = styled.div`
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  overflow: scroll;
-  background-color: white;
-`;
 function ArtPieces({
   pieces,
   artPieceInFocus,
@@ -43,6 +32,7 @@ function ArtPieces({
       scrollToPiece(artPieceInFocus);
     }
   }, [artPieceInFocus]);
+  
   return (
     <Root ref={artPiecesRef}>
       {" "}

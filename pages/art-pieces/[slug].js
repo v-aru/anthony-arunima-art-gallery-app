@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { useFavourites } from "@/components/Favourites/FavouritesContext";
 import FormAddComment from "@/components/FormAddComment/FormAddComment";
-import { CommentsWrapper, Root, StyledBody } from "./slugStyles";
+import { CommentsWrapper, Root, StyledBody, StyledMenu } from "./slugStyles";
 import Title from "@/components/Title/Title";
 import { useContext, useState } from "react";
 import CommentsContext from "@/components/CommentsList/CommentsContext";
