@@ -43,7 +43,7 @@ export const ImageInfo = styled.div`
   align-items: center;
   padding: 1rem;
   color: #6689A1;
-  background-color: #33343380;
+  background-color: #D4D5D1;
   border: 1px solid #6689A1;
   padding: 15px;
   margin-top: 10px;
@@ -72,7 +72,7 @@ export const LinkWrapper = styled.div`
   }
   & > * {
     color: white;
-    background-color: #33343380;
+    background-color: #D4D5D1;
     padding: 1rem;
     overflow-wrap: break-word;
   }

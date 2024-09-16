@@ -8,6 +8,7 @@ import {
 } from "./commentStyling";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+// import Image from "next/image";
 
 dayjs.extend(relativeTime);
 
@@ -35,7 +36,7 @@ export default function Comment({ commentObj }) {
     };
 
     generateRandomAvatar();
-  }, []);
+  }, [apiSeed]);
 
   return (
     <StyledCommentWrapper>

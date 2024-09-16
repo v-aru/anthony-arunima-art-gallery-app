@@ -31,7 +31,7 @@ const useResizeObserver = (
       clearTimeout(timeoutId);
       document.removeEventListener("mousemove", handleUserActivity);
     };
-  }, [handleUserActivity]);
+  }, [handleUserActivity, nestedRef, setDimensions, setIsUserActive]);
 };
 
 export default useResizeObserver;
