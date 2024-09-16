@@ -6,6 +6,9 @@ import { useFavourites } from "@/components/Favourites/FavouritesContext";
 import FormAddComment from "@/components/FormAddComment/FormAddComment";
 import { CommentsWrapper, Root, StyledBody } from "./slugStyles";
 import Title from "@/components/Title/Title";
+import { useContext, useState } from "react";
+import CommentsContext from "@/components/CommentsList/CommentsContext";
+import Menu from "@/components/Menu/Menu";
 
 export default function ArtPiecePage({
   artPieceInFocus,
@@ -13,6 +16,8 @@ export default function ArtPiecePage({
   onToggleFavourite,
 }) {
   const router = useRouter();
+  const { filteredCommentsBySlug } = useContext(CommentsContext);
+  const [showFormAddComments, setShowFormAddComments] = useState(false);
   const { favourites, toggleFavourite } = useFavourites();
 
   if (router.isFallback) {
@@ -27,6 +32,10 @@ export default function ArtPiecePage({
     artPieceInFocus;
 
   const isFavourite = favourites.some((fav) => fav.slug === slug);
+
+  const handleToggleShowFormAddComment = () => {
+    setShowFormAddComments((prev) => !prev);
+  };
   return (
     <Root colors={artPieceInFocus.colors}>
       <Title
@@ -36,11 +45,19 @@ export default function ArtPiecePage({
       <StyledBody>
         <div
           style={{
+            width: "100%",
+            height: "100%",
             display: "flex",
             flexFlow: "column nowrap",
-            justifyContent: "center",
+            justifyContent: "flex-start",
+            alignItems: "center",
           }}
         >
+          <Menu
+            context="slug"
+            data={filteredCommentsBySlug}
+            onButtonClick={handleToggleShowFormAddComment}
+          />
           <ArtPiecesPreview
             key={slug}
             slug={slug}
@@ -56,7 +73,7 @@ export default function ArtPiecePage({
             onToggleFavourite={toggleFavourite}
             isFavourite={isFavourite}
           />
-          <FormAddComment />
+          {showFormAddComments && <FormAddComment />}
         </div>
         <CommentsWrapper>
           <CommentsList artPieceInFocus={artPieceInFocus} />
